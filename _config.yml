@@ -1,10 +1,10 @@
 # Site settings
-title: Brilliantly wrong
-longtitle: Brilliantly wrong (blog by Alex Rogozhnikov)
+title: Probably
+longtitle: Probably
 email: rohankotwani@icloud.com
 description: Brilliantly Wrong — Alex Rogozhnikov's blog about math, machine learning, programming and high energy physics.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://Freedomtowin.github.io" # the base hostname & protocol for your site
+url: "http://freedomtowin.github.io" # the base hostname & protocol for your site
 #twitter_username: jekyllrb
 github_username: Freedomtowin
 # Build settings
