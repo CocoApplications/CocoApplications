@@ -4,8 +4,8 @@ longtitle: Data Science Engine (blog by Rohan Kotwani)
 email: rohankotwani@icloud.com
 description: Data Science Enginer — A showcase of algorithms written from scratch
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://freedomtowin.github.io" # the base hostname & protocol for your site
+url: "http://arogozhnikov.github.io" # the base hostname & protocol for your site
 #twitter_username: jekyllrb
-github_username: freedomtowin
+github_username: arogozhnikov
 # Build settings
 markdown: kramdown
