@@ -1,0 +1,61 @@
+---
+layout: post
+title: LibFM in python
+date: '2015-07-04T14:33:00.000-07:00'
+author: Alex
+tags:
+- Machine Learning
+- Python
+modified_time: '2015-07-06T15:56:09.367-07:00'
+blogger_id: tag:blogger.com,1999:blog-307916792578626510.post-3821345336935899679
+blogger_orig_url: http://brilliantlywrong.blogspot.com/2015/07/libfm-in-python.html
+---
+
+
+
+<p>
+	<a href="http://libfm.org/">LibFM</a> is library for factorization machines using an&nbsp;approach
+	proposed by&nbsp;Steffen Rendle. However it&nbsp;seems that there is&nbsp;no&nbsp;python wrapper for this famous library.
+</p>
+<p>
+	So if&nbsp;you’re looking for python version of LibFM, take a&nbsp;closer look at&nbsp;these projects:
+</p>
+
+<ul>
+	<li><a href="https://github.com/coreylynch/pyFM">https://github.com/coreylynch/pyFM</a><br/>
+		<p>
+			Lovely minimalistic implementation of&nbsp;Factorization Machines using cython (previous version used numpy).<br/>
+			This library has an&nbsp;interface similar to&nbsp;scikit-learn.
+		</p>
+		<p>
+			Unfortunately, in my tests I wasn't able to get useful results with this library, while official LibFM was working fine.
+			With learning rate > $1^{-6}$ the learning process simply diverged.
+		</p>
+
+	</li>
+	<li>
+		<p>
+			<a href="http://ibayer.github.io/fastFM/index.html">http://ibayer.github.io/fastFM/index.html</a><br/>
+			fastFM&nbsp;is another option. Library supports both classification and regression.<br/>
+			Contains three different solvers (SGD, ALS, MCMC). ALS = alternative least squares.<br/>
+			In&nbsp;the paper written by&nbsp;author of&nbsp;algorithm, he&nbsp;argues that other algorithms are comparable to&nbsp;SGD.<br/>
+		</p>
+		<p>
+			This library is&nbsp;completely following scikit-learn interface (even deriving from BaseEstimator and appropriate mixin classes),
+			another strong side is that it reimplements all official methods. In the paper written about the library It was stated that this implementation is 2-3 times faster.
+		</p>
+	</li>
+	<li>I&nbsp;was also looking for code in&nbsp;theano, but the only code&nbsp;I found was very dirty and minimalistic (so&nbsp;I’m not hoping it&nbsp;is&nbsp;usable)<br/>
+		<a href="https://github.com/instagibbs/FactorizationMachine">https://github.com/instagibbs/FactorizationMachine</a>
+		<br />
+		<i>Update (21 April 2017):</i> <br />
+		There is a theano-based implementation by Daniel Steinberg which uses adaptive SGD methods: <br />
+		<a href="https://github.com/dstein64/PyFactorizationMachines">https://github.com/dstein64/PyFactorizationMachines</a> (I haven't tested it).
+	</li>
+
+</ul>
+
+<div style="background-color: #ffdddd; font-size: 1.2em; color: #444; padding: 15px; margin: 5px;">
+	Update: I've <a href="{% post_url 2016-02-15-TestingLibFM %}">tested some LibFM implementations</a> on several datasets.
+	I've compared libFM and options proposed in this post.
+</div>
