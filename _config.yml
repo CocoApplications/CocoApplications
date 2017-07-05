@@ -1,11 +1,11 @@
 # Site settings
-title: Brilliantly wrong
-longtitle: Brilliantly wrong (blog by Alex Rogozhnikov)
-email: alex.rogozhnikov@yandex.ru
-description: Brilliantly Wrong — Alex Rogozhnikov's blog about math, machine learning, programming and high energy physics.
+title: Data Science Engine
+longtitle: Data Science Engine (blog by Rohan Kotwani)
+email: rohankotwani@icloud.com
+description: Data Science Enginer — A showcase of algorithms written from scratch
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://arogozhnikov.github.io" # the base hostname & protocol for your site
+url: "http://freedomtowin.github.io" # the base hostname & protocol for your site
 #twitter_username: jekyllrb
-github_username: arogozhnikov
+github_username: freedomtowin
 # Build settings
 markdown: kramdown
