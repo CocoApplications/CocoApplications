@@ -14,7 +14,7 @@ tags:
 ---
 
 
-This post is mostly as a reference to regression alogrithms that will eventually be used in bigger projects. For this reason, the descriptions and plots are kept to a minimum.
+This post is mostly used to reference to regression alogrithms that will eventually be used in bigger projects and more complicated models. For this reason, the descriptions and plots are kept to a minimum.
 
 
 ```python
