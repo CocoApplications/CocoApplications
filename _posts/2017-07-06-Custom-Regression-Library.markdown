@@ -13,14 +13,15 @@ tags:
 
 ---
 
-{% highlight python linenos %}
+
+This library is mostly as a reference to regression alogrithms that will eventually be used in bigger projects. For this reason, the descriptions and plots are kept to a minimum.
+
+
+```python
 import importlib
 import Regression
 importlib.reload(Regression)
-{% highlight python linenos %}
-
-
-
+```
 
 
 ```python
@@ -190,8 +191,8 @@ plt.close()
 
 
 
-![png](output_13_1.png)
 
+<p><img src='/regression_images/output_13_1.png' /></p>
 
 ### Lasso Regression - Choose L1 Penalty
 
