@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ```python
 import importlib
 import DSP
@@ -51,6 +52,7 @@ plt.show()
 
 <p><img src='/images/output_1_0.png' /></p>
 
+
 ### Differenced time series
 
 
@@ -61,7 +63,9 @@ plt.show()
 ```
 
 
-![png](http://github.com/Freedomtowin/Freedomtowin.github.io/tree/master/images/output_3_0.png)
+
+<p><img src='/images/output_3_0.png' /></p>
+
 
 
 ### FFT transformation
@@ -81,7 +85,8 @@ plt.show()
 
 
 
-![png](http://github.com/Freedomtowin/Freedomtowin.github.io/tree/master/images/output_5_1.png)
+<p><img src='/images/output_5_1.png' /></p>
+
 
 
 ### Filtering frequency domain: center, band, and threshold
@@ -135,8 +140,7 @@ plt.show()
     R-squared:  -0.292495451555
 
 
-
-![png](http://github.com/Freedomtowin/Freedomtowin.github.io/tree/master/images/output_9_1.png)
+<p><img src='/images/output_9_1.png' /></p>
 
 
 ### Seasonal Component S(t) : Waveform generation
@@ -164,12 +168,10 @@ for period in [2.0]:
 S_train,S_valid = S_train[:,1:],S_valid[:,1:]
 ```
 
+<p><img src='/images/output_11_0.png' /></p>
 
-![png](http://github.com/Freedomtowin/Freedomtowin.github.io/tree/master/images/output_11_0.png)
+<p><img src='/images/output_11_1.png' /></p>
 
-
-
-![png](http://github.com/Freedomtowin/Freedomtowin.github.io/tree/master/images/output_11_1.png)
 
 
 ### Trend & Seasonal Regression with LASSO feature selection - x(t) = T(t) + S(t) +R(t) + error 
@@ -273,8 +275,7 @@ plt.show()
     R-squared:  0.609761790045
 
 
-
-![png](http://github.com/Freedomtowin/Freedomtowin.github.io/tree/master/images/output_15_1.png)
+<p><img src='/images/output_15_1.png' /></p>
 
 
 
@@ -326,11 +327,9 @@ plt.show()
 ```
 
 
-![png](http://github.com/Freedomtowin/Freedomtowin.github.io/tree/master/images/output_18_0.png)
+<p><img src='/images/output_18_0.png' /></p>
 
-
-
-![png](http://github.com/Freedomtowin/Freedomtowin.github.io/tree/master/images/output_18_1.png)
+<p><img src='/images/output_18_1.png' /></p>
 
 
 ### Statsmodels ARIMA model - choose p, d, and q parameters
@@ -382,20 +381,6 @@ plt.show()
 
 
 
-![png](http://github.com/Freedomtowin/Freedomtowin.github.io/tree/master/images/output_22_2.png)
+<p><img src='/images/output_22_2.png' /></p>
 
 
-
-```python
-
-```
-
-
-```python
-
-```
-
-
-```python
-
-```
