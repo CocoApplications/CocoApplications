@@ -49,10 +49,7 @@ plt.title('Pageviews')
 plt.show()
 ```
 
-
-<img src="http://github.com/Freedomtowin/Freedomtowin.github.io/tree/master/images/output_1_0.png" width="100%"
-alt=""/>
-
+<p><img src='/images/output_1_0.png' /></p>
 
 ### Differenced time series
 
