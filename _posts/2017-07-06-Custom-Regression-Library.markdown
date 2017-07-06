@@ -17,11 +17,11 @@ tags:
 This library is mostly as a reference to regression alogrithms that will eventually be used in bigger projects. For this reason, the descriptions and plots are kept to a minimum.
 
 
-```python
+~~~ python
 import importlib
 import Regression
 importlib.reload(Regression)
-```
+~~~
 
 
 ```python
