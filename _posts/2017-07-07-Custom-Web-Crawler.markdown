@@ -39,11 +39,11 @@ import pandas.io.sql as psql
 {% endhighlight %}
 
 
-```python
+{% highlight python %}
 import importlib
 import Crawl
 importlib.reload(Crawl)
-```
+{% endhighlight %}
 
 
 
@@ -55,7 +55,7 @@ importlib.reload(Crawl)
 ### Yahoo news raw HTML database
 
 
-```python
+{% highlight python %}
 url = "https://www.yahoo.com/news"
 scrape_date=strftime("%Y-%m-%d", gmtime())
         
@@ -81,10 +81,10 @@ def yahoo_news_meta_data(url, max_count=1000):
             ad_count+=1
     return df1
 
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 #default_proxy()    
 
 #connect_tor()
@@ -171,7 +171,7 @@ def upload_database(df2,db_name):
 url = "https://www.yahoo.com/news"
 pandas_df = scrape_page(url,yahoo_news_meta_data)
 upload_database(pandas_df,db_name='yahoo_news_database_raw')
-```
+{% endhighlight %}
 
     reading pages
     https://www.yahoo.com/news
@@ -184,7 +184,7 @@ upload_database(pandas_df,db_name='yahoo_news_database_raw')
 ### Yahoo finance top mutual funds
 
 
-```python
+{% highlight python %}
 
 def crawl_pages(max_pages=1):
     scrape_date=strftime("%Y-%m-%d", gmtime())
@@ -245,7 +245,7 @@ stock_df['YTD Return'] = stock_df['YTD Return'].apply(lambda x: quick_format(x))
 
 upload_database(stock_df,db_name='yahoo_stock_database')
 stock_df.head()
-```
+{% endhighlight %}
 
     https://finance.yahoo.com/screener/predefined/top_mutual_funds?offset=0&count=100
     https://finance.yahoo.com/screener/predefined/top_mutual_funds?offset=100&count=100
@@ -376,7 +376,7 @@ stock_df.head()
 ### Yahoo news- Extract Transform Load
 
 
-```python
+{% highlight python %}
 def get_title(s):
     s = s.decode('utf-8')
     soup1=bs4.BeautifulSoup(s,"html.parser")
@@ -452,10 +452,10 @@ def get_images(s):
         Poster_images="NULL"
     return str(Poster_images)
 
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 
 extract_pipeline = [("Post",get_post),
                     ("Images",get_images),
@@ -510,17 +510,16 @@ while True:
     offset += chunk_size
     if len(chunk) < chunk_size:
         break
-```
+{% endhighlight %}
 
     offset:  0
     chunk size: 10
 
 
 
-```python
+{% highlight python %}
 pd.read_sql(to_db_name, con=engine).head()
-```
-
+{% endhighlight %}
 
 
 
@@ -613,12 +612,3 @@ pd.read_sql(to_db_name, con=engine).head()
 
 
 
-
-```python
-
-```
-
-
-```python
-
-```
