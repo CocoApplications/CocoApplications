@@ -50,7 +50,7 @@ plt.title('Pageviews')
 plt.show()
 ```
 
-<p><img src='/signals/output_1_0.png' /></p>
+<p><img src='/signal_images/output_1_0.png' /></p>
 
 
 ### Differenced time series
@@ -64,7 +64,7 @@ plt.show()
 
 
 
-<p><img src='/signals/output_3_0.png' /></p>
+<p><img src='/signal_images/output_3_0.png' /></p>
 
 
 
@@ -85,7 +85,7 @@ plt.show()
 
 
 
-<p><img src='/signals/output_5_1.png' /></p>
+<p><img src='/signal_images/output_5_1.png' /></p>
 
 
 
@@ -140,7 +140,7 @@ plt.show()
     R-squared:  -0.292495451555
 
 
-<p><img src='/signals/output_9_1.png' /></p>
+<p><img src='/signal_images/output_9_1.png' /></p>
 
 
 ### Seasonal Component S(t) : Waveform generation
@@ -168,9 +168,9 @@ for period in [2.0]:
 S_train,S_valid = S_train[:,1:],S_valid[:,1:]
 ```
 
-<p><img src='/signals/output_11_0.png' /></p>
+<p><img src='/signal_images/output_11_0.png' /></p>
 
-<p><img src='/signals/output_11_1.png' /></p>
+<p><img src='/signal_images/output_11_1.png' /></p>
 
 
 
@@ -275,7 +275,7 @@ plt.show()
     R-squared:  0.609761790045
 
 
-<p><img src='/signals/output_15_1.png' /></p>
+<p><img src='/signal_images/output_15_1.png' /></p>
 
 
 
@@ -327,9 +327,9 @@ plt.show()
 ```
 
 
-<p><img src='/signals/output_18_0.png' /></p>
+<p><img src='/signal_images/output_18_0.png' /></p>
 
-<p><img src='/signals/output_18_1.png' /></p>
+<p><img src='/signal_images/output_18_1.png' /></p>
 
 
 ### Statsmodels ARIMA model - choose p, d, and q parameters
@@ -381,6 +381,6 @@ plt.show()
 
 
 
-<p><img src='/signals/output_22_2.png' /></p>
+<p><img src='/signal_images/output_22_2.png' /></p>
 
 
