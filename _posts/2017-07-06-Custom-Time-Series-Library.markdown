@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "sPlot: a technique to reconstruct components of mixture"
-date: 2015-10-07 12:00:00
-author: Alex Rogozhnikov
-excerpt: "Explanation of sPlot ans sWeight - an important tool to deal with mixtures of distributions"
+title:  "Custom Time Series & Signal Processing Library"
+date: 2017-07-06 12:00:00
+author: Rohan Kotwani
+excerpt: "Custom library of signal processing and time series techniques."
 tags: 
-- High energy physics
-- sPlot
+- Time Series
+- Signal Processing
 - 'hep_ml'
 ---
 
@@ -20,8 +20,6 @@ importlib.reload(DSP)
 import Regression
 importlib.reload(Regression)
 ```
-
-
 
 
     <module 'Regression' from '/Users/rohankotwani/Documents/Complex-Time-Series-Signal-Processing/Regression.py'>
@@ -52,7 +50,7 @@ plt.show()
 ```
 
 
-![png](output_1_0.png)
+![png](images/custom-signal-image/output_1_0.png)
 
 
 ### Differenced time series
@@ -65,7 +63,7 @@ plt.show()
 ```
 
 
-![png](output_3_0.png)
+![png](images/custom-signal-image/output_3_0.png)
 
 
 ### FFT transformation
@@ -85,7 +83,7 @@ plt.show()
 
 
 
-![png](output_5_1.png)
+![png](images/custom-signal-image/output_5_1.png)
 
 
 ### Filtering frequency domain: center, band, and threshold
@@ -140,7 +138,7 @@ plt.show()
 
 
 
-![png](output_9_1.png)
+![png](images/custom-signal-image/output_9_1.png)
 
 
 ### Seasonal Component S(t) : Waveform generation
@@ -169,11 +167,11 @@ S_train,S_valid = S_train[:,1:],S_valid[:,1:]
 ```
 
 
-![png](output_11_0.png)
+![png](images/custom-signal-image/output_11_0.png)
 
 
 
-![png](output_11_1.png)
+![png](images/custom-signal-image/output_11_1.png)
 
 
 ### Trend & Seasonal Regression with LASSO feature selection - x(t) = T(t) + S(t) +R(t) + error 
@@ -278,7 +276,7 @@ plt.show()
 
 
 
-![png](output_15_1.png)
+![png](images/custom-signal-image/output_15_1.png)
 
 
 
@@ -330,11 +328,11 @@ plt.show()
 ```
 
 
-![png](output_18_0.png)
+![png](images/custom-signal-image/output_18_0.png)
 
 
 
-![png](output_18_1.png)
+![png](images/custom-signal-image/output_18_1.png)
 
 
 ### Statsmodels ARIMA model - choose p, d, and q parameters
@@ -386,7 +384,7 @@ plt.show()
 
 
 
-![png](output_22_2.png)
+![png](images/custom-signal-image/output_22_2.png)
 
 
 
