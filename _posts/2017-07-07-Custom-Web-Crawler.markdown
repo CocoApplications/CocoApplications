@@ -12,7 +12,7 @@ tags:
 
 ---
 
-```python
+{% highlight python %}
 import datetime
 import time
 import pandas as pd
@@ -36,7 +36,7 @@ import json
 import socket
 import socks
 import pandas.io.sql as psql
-```
+{% endhighlight %}
 
 
 ```python
