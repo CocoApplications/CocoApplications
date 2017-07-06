@@ -10,7 +10,7 @@ tags:
 
 ---
 
-
+Here is a brief overview of how signal processing techniques can non-stationary time series that depend on multiple dimensions. This is constrasted with existing, prepackaged, time series modelling techniques such as the autoregressive integrated moving average, ARIMA, models. 
 
 
 ```python
