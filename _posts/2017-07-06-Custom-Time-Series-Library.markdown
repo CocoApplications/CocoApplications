@@ -50,7 +50,7 @@ plt.show()
 ```
 
 
-![png](http://github.com/Freedomtowin/Freedomtowin.github.io/images/custom-signal-image/output_1_0.png)
+![png](http://github.com/Freedomtowin/Freedomtowin.github.io/images/output_1_0.png)
 
 
 ### Differenced time series
@@ -63,7 +63,7 @@ plt.show()
 ```
 
 
-![png](http://github.com/Freedomtowin/Freedomtowin.github.io/images/custom-signal-image/output_3_0.png)
+![png](http://github.com/Freedomtowin/Freedomtowin.github.io/images/output_3_0.png)
 
 
 ### FFT transformation
@@ -83,7 +83,7 @@ plt.show()
 
 
 
-![png](http://github.com/Freedomtowin/Freedomtowin.github.io/images/custom-signal-image/output_5_1.png)
+![png](http://github.com/Freedomtowin/Freedomtowin.github.io/images/output_5_1.png)
 
 
 ### Filtering frequency domain: center, band, and threshold
@@ -138,7 +138,7 @@ plt.show()
 
 
 
-![png](http://github.com/Freedomtowin/Freedomtowin.github.io/images/custom-signal-image/output_9_1.png)
+![png](http://github.com/Freedomtowin/Freedomtowin.github.io/images/output_9_1.png)
 
 
 ### Seasonal Component S(t) : Waveform generation
@@ -167,11 +167,11 @@ S_train,S_valid = S_train[:,1:],S_valid[:,1:]
 ```
 
 
-![png](http://github.com/Freedomtowin/Freedomtowin.github.io/images/custom-signal-image/output_11_0.png)
+![png](http://github.com/Freedomtowin/Freedomtowin.github.io/images/output_11_0.png)
 
 
 
-![png](http://github.com/Freedomtowin/Freedomtowin.github.io/images/custom-signal-image/output_11_1.png)
+![png](http://github.com/Freedomtowin/Freedomtowin.github.io/images/output_11_1.png)
 
 
 ### Trend & Seasonal Regression with LASSO feature selection - x(t) = T(t) + S(t) +R(t) + error 
@@ -276,7 +276,7 @@ plt.show()
 
 
 
-![png](http://github.com/Freedomtowin/Freedomtowin.github.io/images/custom-signal-image/output_15_1.png)
+![png](http://github.com/Freedomtowin/Freedomtowin.github.io/images/output_15_1.png)
 
 
 
@@ -328,11 +328,11 @@ plt.show()
 ```
 
 
-![png](http://github.com/Freedomtowin/Freedomtowin.github.io/images/custom-signal-image/output_18_0.png)
+![png](http://github.com/Freedomtowin/Freedomtowin.github.io/images/output_18_0.png)
 
 
 
-![png](http://github.com/Freedomtowin/Freedomtowin.github.io/images/custom-signal-image/output_18_1.png)
+![png](http://github.com/Freedomtowin/Freedomtowin.github.io/images/output_18_1.png)
 
 
 ### Statsmodels ARIMA model - choose p, d, and q parameters
@@ -384,7 +384,7 @@ plt.show()
 
 
 
-![png](http://github.com/Freedomtowin/Freedomtowin.github.io/images/custom-signal-image/output_22_2.png)
+![png](http://github.com/Freedomtowin/Freedomtowin.github.io/images/output_22_2.png)
 
 
 
