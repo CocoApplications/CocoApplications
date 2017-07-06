@@ -13,17 +13,17 @@ tags:
 
 ---
 
-```python
+{% highlight python linenos %}
 import importlib
 import Regression
 importlib.reload(Regression)
-```
+{% highlight python linenos %}
 
 
 
 
 
-~~~python
+```python
 import pandas as pd
 import numpy as np
 
@@ -39,7 +39,7 @@ def heapsort(iterable):
     for value in iterable:
         heapq.heappush(h, value)
     return [heapq.heappop(h) for i in range(len(h))]
-~~~
+```
 
 ### Polynomial Regression
 
