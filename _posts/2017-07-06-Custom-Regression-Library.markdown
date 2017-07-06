@@ -14,14 +14,13 @@ tags:
 ---
 
 
-This library is mostly as a reference to regression alogrithms that will eventually be used in bigger projects. For this reason, the descriptions and plots are kept to a minimum.
+This post is mostly as a reference to regression alogrithms that will eventually be used in bigger projects. For this reason, the descriptions and plots are kept to a minimum.
 
 
-~~~ python
-import importlib
-import Regression
-importlib.reload(Regression)
-~~~
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">importlib</span>
+<span class="kn">import</span> <span class="nn">Regression</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">Regression</span><span class="p">)</span>
+</pre></div>
 
 
 ```python
