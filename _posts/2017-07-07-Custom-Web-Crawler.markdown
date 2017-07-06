@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Web Crawler with MySQL"
+title:  "Web Crawler / MySQL Backend"
 date: 2017-07-06 12:00:00
 author: Rohan Kotwani
 excerpt: "Web data collection, ETL process into MySQL database"
