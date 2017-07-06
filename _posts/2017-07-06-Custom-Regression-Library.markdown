@@ -1,4 +1,17 @@
+---
+layout: post
+title:  "Custom Regression Library"
+date: 2017-07-06 12:00:00
+author: Rohan Kotwani
+excerpt: "Custom library for regression algorithms"
+tags: 
+- Regression
+- Lasso
+- Ridge
+- KNN
+- Polynomial
 
+---
 
 ```python
 import importlib
@@ -9,12 +22,8 @@ importlib.reload(Regression)
 
 
 
-    <module 'Regression' from '/Users/rohankotwani/Documents/MachineLearning/Regression.py'>
 
-
-
-
-```python
+~~~python
 import pandas as pd
 import numpy as np
 
@@ -30,7 +39,7 @@ def heapsort(iterable):
     for value in iterable:
         heapq.heappush(h, value)
     return [heapq.heappop(h) for i in range(len(h))]
-```
+~~~
 
 ### Polynomial Regression
 
@@ -43,7 +52,6 @@ for i in range(1,15):
     heap.append((SSE,i))
 heapsort(heap)
 ```
-
 
 
 

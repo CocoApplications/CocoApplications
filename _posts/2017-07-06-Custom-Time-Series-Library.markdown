@@ -3,7 +3,7 @@ layout: post
 title:  "Custom Time Series & Signal Processing Library"
 date: 2017-07-06 12:00:00
 author: Rohan Kotwani
-excerpt: "Custom library of signal processing and time series techniques."
+excerpt: "Custom library for signal processing and time series techniques."
 tags: 
 - Time Series
 - Signal Processing
