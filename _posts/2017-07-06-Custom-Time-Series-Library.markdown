@@ -50,9 +50,8 @@ plt.show()
 ```
 
 
-<img src="images/output_1_0.png" width="100%"
-alt="visualizing gradient boosting over decision trees"/>
-
+<img src="http://github.com/Freedomtowin/Freedomtowin.github.io/tree/master/images/output_1_0.png" width="100%"
+alt=""/>
 
 
 ### Differenced time series
