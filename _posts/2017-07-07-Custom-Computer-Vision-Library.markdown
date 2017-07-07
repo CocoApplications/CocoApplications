@@ -380,7 +380,7 @@ plt.close()
 
 {% endhighlight %}
 
-### Image signiture with average brightnesses (Image database or Exact matching)
+### Image signature with average brightnesses (Image database or Exact matching)
 
 
 {% highlight python %}
