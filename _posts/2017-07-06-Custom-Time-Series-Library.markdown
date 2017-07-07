@@ -13,14 +13,14 @@ tags:
 Here is a brief overview of how signal processing techniques can non-stationary time series that depend on multiple dimensions. This is constrasted with existing, prepackaged, time series modelling techniques such as the autoregressive integrated moving average, ARIMA, models. 
 
 
-```python
+{% highlight python %}
 import importlib
 import DSP
 importlib.reload(DSP)
 
 import Regression
 importlib.reload(Regression)
-```
+{% endhighlight %}
 
 
     <module 'Regression' from '/Users/rohankotwani/Documents/Complex-Time-Series-Signal-Processing/Regression.py'>
@@ -28,7 +28,7 @@ importlib.reload(Regression)
 
 
 
-```python
+{% highlight python %}
 import matplotlib.pyplot as plt
 import datetime
 import numpy as np
@@ -48,7 +48,7 @@ plt.xlabel('time')
 plt.ylabel('Pageviews')
 plt.title('Pageviews')
 plt.show()
-```
+{% endhighlight %}
 
 <p><img src='/signal_images/output_1_0.png' /></p>
 
@@ -56,11 +56,11 @@ plt.show()
 ### Differenced time series
 
 
-```python
+{% highlight python %}
 time_diff_signal = DSP.time_diff_variable(train[['Pageviews']].values.flatten(),1)
 plt.plot(train['index'][1:],time_diff_signal,'-');plt.xlabel('time');plt.ylabel('Pageviews[t] - Pageviews[t-1]');plt.title('Pageviews[t] - Pageviews[t-1]')
 plt.show()
-```
+{% endhighlight %}
 
 
 
@@ -71,14 +71,14 @@ plt.show()
 ### FFT transformation
 
 
-```python
+{% highlight python %}
 N = len(time_diff_signal)
 unfiltered  = DSP.get_frequency_domain(time_diff_signal)
 f,y  = unfiltered[:,0],unfiltered[:,1]
 y_abs=( 2.0/N * np.abs(y[1:]))
 plt.plot(f[1:],y_abs);plt.xlabel('frequency');plt.ylabel('absolute magnitude');plt.title("Absolute Magnitude of Complex Frequencies")
 plt.show()
-```
+{% endhighlight %}
 
     /Users/rohankotwani/anaconda/envs/datasci/lib/python3.5/site-packages/numpy/core/numeric.py:531: ComplexWarning: Casting complex values to real discards the imaginary part
       return array(a, dtype, copy=False, order=order)
@@ -92,14 +92,14 @@ plt.show()
 ### Filtering frequency domain: center, band, and threshold
 
 
-```python
+{% highlight python %}
 abs_filtered = np.absolute(DSP.filter_freq_domain(unfiltered, center=0.3,band=0.2,threshold=500))
 print("Frequency, Magnitude")
 print(abs_filtered)
 
 period_list = set([round(1/(ft)) for ft,ht in abs_filtered if round(1/(ft))>2])
 print("periods: ",period_list)
-```
+{% endhighlight %}
 
     Frequency, Magnitude
     [[  1.42284569e-01   3.19255651e+05]
@@ -115,7 +115,7 @@ print("periods: ",period_list)
 ### Trend component T(t) : Polynomial regression
 
 
-```python
+{% highlight python %}
 heap = []
 for i in range(1,15):
     z=Regression.sklearn_poly_regression(train[['index']],train[['Pageviews']],i)
@@ -135,7 +135,7 @@ SST = np.sum((valid['Pageviews']-np.mean(valid['Pageviews']))**2)
 print("R-squared: ",1-SSE/SST)
 plt.plot(valid['index'],valid['Pageviews'],'b.');plt.plot(valid['index'],predict,'r-',linewidth=1.5);plt.title("Polynomial Regression: validation data")
 plt.show()
-```
+{% endhighlight %}
 
     R-squared:  -0.292495451555
 
@@ -146,7 +146,7 @@ plt.show()
 ### Seasonal Component S(t) : Waveform generation
 
 
-```python
+{% highlight python %}
 import importlib
 import DSP
 importlib.reload(DSP)
@@ -166,7 +166,7 @@ for period in [2.0]:
         plt.show()
 
 S_train,S_valid = S_train[:,1:],S_valid[:,1:]
-```
+{% endhighlight %}
 
 <p><img src='/signal_images/output_11_0.png' /></p>
 
@@ -177,7 +177,7 @@ S_train,S_valid = S_train[:,1:],S_valid[:,1:]
 ### Trend & Seasonal Regression with LASSO feature selection - x(t) = T(t) + S(t) +R(t) + error 
 
 
-```python
+{% highlight python %}
 heap = []
 for i in range(1,15):
     T_train = Regression.pandas_poly_feature(train[['index']],i).values
@@ -220,19 +220,19 @@ for i in range(1,15):
         z = Regression.numpy_simple_regression(P_train_df[mask].values,train[['Pageviews']])
         SSE = Regression.numpy_SSE(P_valid_df[mask].values,valid[['Pageviews']],z)
         heap.append((SSE,i,thresh,penalty))
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 SSE,i,thresh,penalty = Regression.heapsort(heap)[0]
 print("model paramters: ",i,thresh,penalty)
-```
+{% endhighlight %}
 
     model paramters:  4 111.111111111 10.0
 
 
 
-```python
+{% highlight python %}
 T_train = Regression.pandas_poly_feature(train[['index']],i).values
 T_valid = Regression.pandas_poly_feature(valid[['index']],i).values
 abs_filtered = np.absolute(DSP.filter_freq_domain(unfiltered, center=0.25,band=0.25,threshold=thresh))
@@ -270,7 +270,7 @@ print("R-squared: ",1-SSE/SST)
 plt.plot(valid['index'],valid['Pageviews'],'b.');plt.plot(valid['index'],predict,'r-',linewidth=1.5);plt.title("Trend & Seasonal Regression: validation data")
 plt.show()
 
-```
+{% endhighlight %}
 
     R-squared:  0.609761790045
 
@@ -279,9 +279,9 @@ plt.show()
 
 
 
-```python
+{% highlight python %}
 z
-```
+{% endhighlight %}
 
 
 
@@ -299,7 +299,7 @@ z
 ### Statsmodels autocorrelation
 
 
-```python
+{% highlight python %}
 import statsmodels
 from statsmodels.tsa.stattools import acf
 from statsmodels.tsa.stattools import pacf
@@ -324,7 +324,7 @@ test_df = pd.DataFrame([ticker_data_pacf_1]).T
 test_df.columns = ['PACF']
 test_df.plot(kind='bar')
 plt.show()
-```
+{% endhighlight %}
 
 
 <p><img src='/signal_images/output_18_0.png' /></p>
@@ -335,7 +335,7 @@ plt.show()
 ### Statsmodels ARIMA model - choose p, d, and q parameters
 
 
-```python
+{% highlight python %}
 %%capture --no-stdout
 heap = []
 import time
@@ -354,15 +354,15 @@ for p in range(0,10):
                 pass
 
 
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 SSE,p,d,q = Regression.heapsort(heap)[0]
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 model = statsmodels.tsa.arima_model.ARIMA(train, order=(p,d,q))
 model_fit = model.fit(disp=0)
 residuals = pd.DataFrame(model_fit.resid)
@@ -371,7 +371,7 @@ SSE = np.sum((valid.values - predictions[0])**2)
 print("R-squared: ",1-SSE/SST)
 plt.plot(valid.values,'b.');plt.plot(predictions[0],'r-',linewidth=1.5);plt.title("ARIMA: validation data")
 plt.show()
-```
+{% endhighlight %}
 
     R-squared:  0.362854882183
 

@@ -18,11 +18,11 @@ This post is mostly used to reference regression alogrithms that will eventually
 
 
 
-```python
+{% highlight python %}
 import importlib
 import Regression
 importlib.reload(Regression)
-```
+{% endhighlight %}
 
 
 
@@ -32,7 +32,7 @@ importlib.reload(Regression)
 
 
 
-```python
+{% highlight python %}
 %matplotlib inline
 import pandas as pd
 import numpy as np
@@ -51,7 +51,7 @@ h = []
 for value in iterable:
 heapq.heappush(h, value)
 return [heapq.heappop(h) for i in range(len(h))]
-```
+{% endhighlight %}
 
 /Users/rohankotwani/anaconda/envs/datasci/lib/python3.5/site-packages/IPython/html.py:14: ShimWarning: The `IPython.html` package has been deprecated. You should import from `notebook` instead. `IPython.html.widgets` has moved to `ipywidgets`.
 "`IPython.html.widgets` has moved to `ipywidgets`.", ShimWarning)
@@ -60,14 +60,14 @@ return [heapq.heappop(h) for i in range(len(h))]
 ### Polynomial Regression
 
 
-```python
+{% highlight python %}
 heap = []
 for i in range(1,15):
 z=Regression.sklearn_poly_regression(train[['sqft_living']],train[['price']],i)
 SSE = Regression.numpy_poly_regression_SSE(valid[['sqft_living']],valid[['price']],i,z)
 heap.append((SSE,i))
 heapsort(heap)
-```
+{% endhighlight %}
 
 
 
@@ -91,14 +91,14 @@ heapsort(heap)
 ### Vanilla Gradient Descent
 
 
-```python
+{% highlight python %}
 X = train[['sqft_living']]
 y = train[["price"]]
 
 init_w = np.array([-47000., 1.]).reshape((2,1))
 w,cost,converged = Regression.vanilla_gradient_descent(X, y, iters=1000, threshold=2.5e9, alpha=7e-12, w= init_w)
 print(w,cost,converged)
-```
+{% endhighlight %}
 
     [[-46999.91969552]
     [   202.3576993 ]] 53434961635.5 False
@@ -107,14 +107,14 @@ print(w,cost,converged)
 ### Polynomial Ridge Regression
 
 
-```python
+{% highlight python %}
 sales = pd.read_csv('DATA/kc_house_data.csv', dtype=dtype_dict)
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 Regression.sklearn_ridge_poly_regression(sales[['sqft_living']],sales[['price']],degree=15,L2_penalty=1.5e-5)
-```
+{% endhighlight %}
 
 
 
@@ -140,7 +140,7 @@ Regression.sklearn_ridge_poly_regression(sales[['sqft_living']],sales[['price']]
 ### Polynomial Ridge Regression - K Fold Cross Validation - Choose L2 Penalty
 
 
-```python
+{% highlight python %}
 train_valid_shuffled = pd.read_csv('DATA/wk3_kc_house_train_valid_shuffled.csv', dtype=dtype_dict)
 test = pd.read_csv('DATA/wk3_kc_house_test_data.csv', dtype=dtype_dict)
 
@@ -152,7 +152,7 @@ for penalty in np.logspace(3, 9, num=13):
 SSE = Regression.sklearn_ridge_k_fold(k=10, l2_penalty=penalty, input_space = X, output = y)
 heap.append((SSE,penalty))
 heapsort(heap)
-```
+{% endhighlight %}
 
 
 
@@ -176,23 +176,23 @@ heapsort(heap)
 ### Ridge Regression - Gradient Descent
 
 
-```python
+{% highlight python %}
 train = pd.read_csv('DATA/kc_house_train_data.csv', dtype=dtype_dict)
 test = pd.read_csv('DATA/kc_house_test_data.csv', dtype=dtype_dict)
 simple_weights_0_penalty,_,_,_=Regression.ridge_gradient_descent(train[['sqft_living']].values, train[['price']], init_w=None, 
 alpha=1e-12,l2_penalty=0, max_iterations=1000)
 simple_weights_high_penalty,_,_,_=Regression.ridge_gradient_descent(train[['sqft_living']], train[['price']], init_w=None,
 alpha=1e-12,l2_penalty=1e11, max_iterations=1000)
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 sns.plt.plot(train[['sqft_living']].values,train[['price']].values,'k.',
 train[['sqft_living']].values,Regression.numpy_predict(train[['sqft_living']],simple_weights_0_penalty),'b.',
 train[['sqft_living']].values,Regression.numpy_predict(train[['sqft_living']],simple_weights_high_penalty),'r.')
 plt.show()
 plt.close()
-```
+{% endhighlight %}
 
 
 <p><img src='(/regression_images/output_13_0.png' /></p>)
@@ -201,15 +201,15 @@ plt.close()
 ### Lasso Regression - Choose L1 Penalty
 
 
-```python
+{% highlight python %}
 from math import log, sqrt
 
 training = pd.read_csv('DATA/wk3_kc_house_train_data.csv', dtype=dtype_dict)
 validation = pd.read_csv('DATA/wk3_kc_house_valid_data.csv', dtype=dtype_dict)
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 training['sqft_living_sqrt'] = training['sqft_living'].apply(sqrt)
 training['sqft_lot_sqrt'] = training['sqft_lot'].apply(sqrt)
 training['bedrooms_square'] = training['bedrooms']*training['bedrooms']
@@ -219,10 +219,10 @@ validation['sqft_living_sqrt'] = validation['sqft_living'].apply(sqrt)
 validation['sqft_lot_sqrt'] = validation['sqft_lot'].apply(sqrt)
 validation['bedrooms_square'] = validation['bedrooms']*validation['bedrooms']
 validation['floors_square'] = validation['floors']*validation['floors']
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 all_features = ['bedrooms', 'bedrooms_square',
 'bathrooms',
 'sqft_living', 'sqft_living_sqrt',
@@ -235,7 +235,7 @@ all_features = ['bedrooms', 'bedrooms_square',
 
 selection = Regression.sklearn_lasso_feature_selection(training[all_features],training[['price']],l1_penalty=5e2)
 sales[selection].head()
-```
+{% endhighlight %}
 
 
 
@@ -300,7 +300,7 @@ sales[selection].head()
 
 
 
-```python
+{% highlight python %}
 heap=[]
 for l1_penalty in np.logspace(0, 7, num=20):
 z = Regression.sklearn_lasso_regression(training[all_features],training[['price']],l1_penalty)
@@ -308,7 +308,7 @@ SSE = Regression.numpy_SSE(validation[all_features],validation[['price']],z)
 heap.append((SSE,l1_penalty))
 
 heapsort(heap)
-```
+{% endhighlight %}
 
 /Users/rohankotwani/anaconda/envs/datasci/lib/python3.5/site-packages/sklearn/linear_model/coordinate_descent.py:466: ConvergenceWarning: Objective did not converge. You might want to increase the number of iterations
 ConvergenceWarning)
@@ -341,7 +341,7 @@ ConvergenceWarning)
 
 
 
-```python
+{% highlight python %}
 selection = Regression.sklearn_lasso_feature_selection(training[all_features],training[['price']],l1_penalty=12.74)
 X = validation[selection]
 y = validation[['price']]
@@ -351,7 +351,7 @@ sns.plt.plot(validation[['sqft_living']].values,validation[['price']].values,'k.
 validation[['sqft_living']].values,Regression.numpy_predict(X.values,z),'r.')
 plt.show()
 plt.close()
-```
+{% endhighlight %}
 
 
 <p><img src='(/regression_images/output_19_0.png' /></p>)
@@ -360,9 +360,9 @@ plt.close()
 ### Lasso Regression - Get Penalty Range For a Given Number of Dimensions
 
 
-```python
+{% highlight python %}
 Regression.sklearn_lasso_penalty_range(training[all_features], training[['price']], num=7)
-```
+{% endhighlight %}
 
 
 
@@ -374,15 +374,15 @@ Regression.sklearn_lasso_penalty_range(training[all_features], training[['price'
 ### KNN regression - Choose K
 
 
-```python
+{% highlight python %}
 train = pd.read_csv("DATA/kc_house_data_small_train.csv")
 test = pd.read_csv("DATA/kc_house_data_small_test.csv")
 validation = pd.read_csv("DATA/kc_house_data_validation.csv")
 features=train.columns[(train.columns!='price')&(train.columns!='date')&(train.columns!='id')]
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 heap=[]
 
 for k in range(1,16):
@@ -390,7 +390,7 @@ predictions = Regression.numpy_knn_regression(k,train[features], train[['price']
 SSE = np.sum((validation.price - predictions)**2)
 heap.append((SSE,k))
 Regression.heapsort(heap)
-```
+{% endhighlight %}
 
 
 
@@ -416,7 +416,7 @@ Regression.heapsort(heap)
 ### Gaussian Kernel Regression - Choose K & B
 
 
-```python
+{% highlight python %}
 heap=[]
 for k in range(1,16):
 for b in np.linspace(0.01,0.9,16):
@@ -424,7 +424,7 @@ predictions = Regression.numpy_gaussian_kernel_regression(k,b,train[features], t
 SSE = np.sum((validation.price - predictions)**2)
 heap.append((SSE,b,k))
 Regression.heapsort(heap)
-```
+{% endhighlight %}
 
 
 
@@ -673,12 +673,12 @@ Regression.heapsort(heap)
 
 
 
-```python
+{% highlight python %}
 sns.plt.plot(validation[['sqft_living']].values,validation[['price']].values,'k.',
 validation[['sqft_living']].values,Regression.numpy_gaussian_kernel_regression(9,0.0693,train[features], train[['price']], validation[features]),'r.')
 plt.show()
 plt.close()
-```
+{% endhighlight %}
 
 
 <p><img src='(/regression_images/output_27_0.png' /></p>)
@@ -687,14 +687,14 @@ plt.close()
 ### Inverse Distance Kernel Regression - Choose K
 
 
-```python
+{% highlight python %}
 heap=[]
 for k in range(1,16):
 predictions = Regression.numpy_knn_weighted_regression(k,train[features], train[['price']], validation[features])
 SSE = np.sum((validation.price - predictions)**2)
 heap.append((SSE,k))
 Regression.heapsort(heap)
-```
+{% endhighlight %}
 
 
 
@@ -718,11 +718,11 @@ Regression.heapsort(heap)
 
 
 
-```python
+{% highlight python %}
 
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 
-```
+{% endhighlight %}

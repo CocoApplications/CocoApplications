@@ -16,11 +16,11 @@ tags:
 The post is surveys common computer vision algos, and it also explores a few custom algorithms. 
 
 
-```python
+{% highlight python %}
 import importlib
 import CVision
 importlib.reload(CVision)
-```
+{% endhighlight %}
 
 
 
@@ -30,17 +30,17 @@ importlib.reload(CVision)
 
 
 
-```python
+{% highlight python %}
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import Regression
-```
+{% endhighlight %}
 
 ### K-means clustering & Image Segmentation 
 
 
-```python
+{% highlight python %}
 img = cv2.imread("image_dump/gr175.jpg") 
 img = CVision.cv2_resize(img,(800,1300))
 
@@ -51,7 +51,7 @@ cluster = CVision.kmeans_color_clustering(img,n=9)
 print(cluster)
 for c in cluster:
     CVision.color_segmentation(img,c,threshold=100)
-```
+{% endhighlight %}
 
 
 <p><img src='/computervision_images/output_3_0.png' /></p>
@@ -111,7 +111,7 @@ for c in cluster:
 ### Object Detection with Canny Filter
 
 
-```python
+{% highlight python %}
 
 object_list = ["y95.jpg","115.jpg","stop-sign.jpeg","ghost-shark.jpeg"]
 object_dir = ["image_dump/"+obj for obj in object_list]
@@ -119,7 +119,7 @@ for d in object_dir:
     obj = cv2.imread(d)         
     obj = cv2.resize(obj,(700,500))  
     p = CVision.get_object(obj,canny_param_1=35,canny_param_2=135,min_area=5500,min_perimeter=300)
-```
+{% endhighlight %}
 
     converting image to grayscale
     top left point:  (348, 291) width and height:  (98, 134) contour area:  9795.5  perimeter:  455.60511887073517  is convex: False  square area:  11883.12688961171
@@ -222,14 +222,14 @@ for d in object_dir:
 
 
 
-```python
+{% highlight python %}
 
-```
+{% endhighlight %}
 
 ### 2D convolution with Contant Border = 0
 
 
-```python
+{% highlight python %}
 
 img = cv2.imread("image_dump/bill-gates.jpeg")       
 img = CVision.cv2_resize(img,(1500,1200))
@@ -266,7 +266,7 @@ plt.figure(figsize=(7,5))
 plt.title("Constant")
 CVision.cv2_to_plt(gray)
 
-```
+{% endhighlight %}
 
 
 <p><img src='/computervision_images/output_8_0.png' /></p>
@@ -294,20 +294,20 @@ CVision.cv2_to_plt(gray)
 
 
 
-```python
+{% highlight python %}
 
-```
+{% endhighlight %}
 
 ### Spectral phase correlation & Image matching 
 
 
-```python
+{% highlight python %}
 img1 = cv2.imread("image_dump/football.png")
 img2 = cv2.imread("image_dump/football_subset.png")
 
 CVision.cv2_to_plt(img1)
 CVision.cv2_to_plt(img2)
-```
+{% endhighlight %}
 
 
 <p><img src='/computervision_images/output_11_0.png' /></p>
@@ -318,9 +318,9 @@ CVision.cv2_to_plt(img2)
 
 
 
-```python
+{% highlight python %}
 corr,pt1,pt2=CVision.sliding_phase_correlation(img1, img2, min_corr=0.95)
-```
+{% endhighlight %}
 
     converting image to grayscale
     converting image to grayscale
@@ -352,9 +352,9 @@ corr,pt1,pt2=CVision.sliding_phase_correlation(img1, img2, min_corr=0.95)
 
 
 
-```python
+{% highlight python %}
 [(c,(y1,x1)) for (c,(y1,x1)) in zip(corr,pt1)]
-```
+{% endhighlight %}
 
 
 
@@ -366,24 +366,24 @@ corr,pt1,pt2=CVision.sliding_phase_correlation(img1, img2, min_corr=0.95)
 
 
 
-```python
+{% highlight python %}
 CVision.cv2_to_plt(cv2.rectangle(img1.copy(),pt1[2],pt2[2],color=(100,100,20),thickness=2))
 plt.close()
-```
+{% endhighlight %}
 
 
 <p><img src='/computervision_images/output_14_0.png' /></p>
 
 
 
-```python
+{% highlight python %}
 
-```
+{% endhighlight %}
 
 ### Image signiture with average brightnesses (Image database or Exact matching)
 
 
-```python
+{% highlight python %}
 import urllib.request
 file = open("/Users/rohankotwani/Downloads/craters.txt").read().split("\n")
 i=0
@@ -402,7 +402,7 @@ for link in file[:5]:
     upperright,upperleft,lowerleft,lowerright=CVision.four_quadrant_indentifier(im_arr,plot=True)
     print("upper right: ",upperright,"upper left: ",upperleft,"lower left: ",lowerleft,"lower right: ",lowerright)
 
-```
+{% endhighlight %}
 
     http://cdn.touropia.com/gfx/d/impact-craters-on-earth/roter_kamm_crater.jpg?v=186603f7e16e01c8707cffc7a3f316a2
 
@@ -482,14 +482,14 @@ for link in file[:5]:
 
 
 
-```python
+{% highlight python %}
 
-```
+{% endhighlight %}
 
 ### Warping an Image
 
 
-```python
+{% highlight python %}
 cage = cv2.imread("image_dump/cage.jpeg",0)
 for k in np.linspace(0,1,2):
     for i in np.linspace(.0,.2,2):
@@ -497,7 +497,7 @@ for k in np.linspace(0,1,2):
             print(i,j,"flip: ",k)
             plt.imshow(CVision.im_warp_right(CVision.im_flip(cage,k),j,i),cmap='gray')
             plt.show()
-```
+{% endhighlight %}
 
     0.0 0.0 flip:  0.0
 
@@ -558,7 +558,7 @@ for k in np.linspace(0,1,2):
 ### Object Matching & Image stitching
 
 
-```python
+{% highlight python %}
 tag1 = cv2.imread("star_bucks/star-bucks1.jpeg",0)
 
 rsq_heap=[]
@@ -589,7 +589,7 @@ for i in range(1,9):
     rsq_heap.append((1-SSE/SST,i))
     
 Regression.heapsort(rsq_heap)
-```
+{% endhighlight %}
 
 
 <p><img src='/computervision_images/output_22_0.png' /></p>
@@ -728,7 +728,7 @@ Regression.heapsort(rsq_heap)
 ### Seam Carving with Sobel energy matrix and dynamic programming
 
 
-```python
+{% highlight python %}
 import importlib
 import CVision
 importlib.reload(CVision)
@@ -740,7 +740,7 @@ CVision.cv2_to_plt(img)
 img2,seams = CVision.remove_n_vertical_seams(img.copy(),n=200,plot=True)
 plt.figure(figsize=(7,5))
 CVision.cv2_to_plt(img2)
-```
+{% endhighlight %}
 
 
 <p><img src='/computervision_images/output_24_0.png' /></p>
@@ -755,21 +755,21 @@ CVision.cv2_to_plt(img2)
 
 
 
-```python
+{% highlight python %}
 
-```
-
-
-```python
-
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 
-```
+{% endhighlight %}
+
+
+{% highlight python %}
+
+{% endhighlight %}
