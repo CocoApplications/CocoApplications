@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Adadeleta Gradient Descent"
+title:  "Adadelta Gradient Descent"
 date: 2017-07-06 12:00:00
 author: Rohan Kotwani
-excerpt: "Least squares parameter estimation using Adadeleta Gradient Descent"
+excerpt: "Least squares parameter estimation using Adadelta Gradient Descent"
 tags: 
 - Regression
 - Gradient Descent
@@ -266,7 +266,7 @@ plt.show()
 
 
 
-<p><img src='/adadeleta/output_8_1.png' /></p>
+<p><img src='/adadelta/output_8_1.png' /></p>
 
 
 #### Custom Gradient Descent Algorithm
@@ -442,7 +442,7 @@ plt.show()
 {% endhighlight %}
 
 
-<p><img src='/adadeleta/output_14_0.png' /></p>
+<p><img src='/adadelta/output_14_0.png' /></p>
 
 
 
@@ -462,7 +462,7 @@ plt.show()
 {% endhighlight %}
 
 
-<p><img src='/adadeleta/output_15_0.png' /></p>
+<p><img src='/adadelta/output_15_0.png' /></p>
 
 
 #### Looking at last 1600 epochs
@@ -540,7 +540,7 @@ plt.show()
 {% endhighlight %}
 
 
-<p><img src='/adadeleta/output_20_0.png' /></p>
+<p><img src='/adadelta/output_20_0.png' /></p>
 
 
 
