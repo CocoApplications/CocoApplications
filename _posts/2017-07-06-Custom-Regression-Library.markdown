@@ -195,7 +195,7 @@ plt.close()
 {% endhighlight %}
 
 
-<p><img src='(/regression_images/output_13_0.png' /></p>)
+<p><img src='regression_images/output_13_0.png' /></p>)
 
 
 ### Lasso Regression - Choose L1 Penalty
@@ -354,7 +354,7 @@ plt.close()
 {% endhighlight %}
 
 
-<p><img src='(/regression_images/output_19_0.png' /></p>)
+<p><img src='regression_images/output_19_0.png' /></p>)
 
 
 ### Lasso Regression - Get Penalty Range For a Given Number of Dimensions
@@ -681,7 +681,7 @@ plt.close()
 {% endhighlight %}
 
 
-<p><img src='(/regression_images/output_27_0.png' /></p>)
+<p><img src='regression_images/output_27_0.png' /></p>)
 
 
 ### Inverse Distance Kernel Regression - Choose K
