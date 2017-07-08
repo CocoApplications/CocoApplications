@@ -1,10 +1,10 @@
 
 
-{% highlight python %}
+```python
 import importlib
 import CVision
 importlib.reload(CVision)
-{% endhighlight %}
+```
 
 
 
@@ -14,17 +14,17 @@ importlib.reload(CVision)
 
 
 
-{% highlight python %}
+```python
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import Regression
-{% endhighlight %}
+```
 
 ### K-means clustering & Image Segmentation 
 
 
-{% highlight python %}
+```python
 img = cv2.imread("image_dump/gr175.jpg") 
 img = CVision.cv2_resize(img,(800,1300))
 
@@ -35,14 +35,14 @@ cluster = CVision.kmeans_color_clustering(img,n=9)
 print(cluster)
 for c in cluster:
     CVision.color_segmentation(img,c,threshold=100)
-{% endhighlight %}
+```
 
 
-<p><img src='computervision_images/output_3_0.png' /></p>
+![png](output_3_0.png)
 
 
 
-<p><img src='computervision_images/output_3_1.png' /></p>
+![png](output_3_1.png)
 
 
     [[  68.22302368  112.6797825     7.62179926]
@@ -57,45 +57,45 @@ for c in cluster:
 
 
 
-<p><img src='computervision_images/output_3_3.png' /></p>
+![png](output_3_3.png)
 
 
 
-<p><img src='computervision_images/output_3_4.png' /></p>
+![png](output_3_4.png)
 
 
 
-<p><img src='computervision_images/output_3_5.png' /></p>
+![png](output_3_5.png)
 
 
 
-<p><img src='computervision_images/output_3_6.png' /></p>
+![png](output_3_6.png)
 
 
 
-<p><img src='computervision_images/output_3_7.png' /></p>
+![png](output_3_7.png)
 
 
 
-<p><img src='computervision_images/output_3_8.png' /></p>
+![png](output_3_8.png)
 
 
 
-<p><img src='computervision_images/output_3_9.png' /></p>
+![png](output_3_9.png)
 
 
 
-<p><img src='computervision_images/output_3_10.png' /></p>
+![png](output_3_10.png)
 
 
 
-<p><img src='computervision_images/output_3_11.png' /></p>
+![png](output_3_11.png)
 
 
 ### Object Detection with Canny Filter
 
 
-{% highlight python %}
+```python
 
 object_list = ["y95.jpg","115.jpg","stop-sign.jpeg","ghost-shark.jpeg"]
 object_dir = ["image_dump/"+obj for obj in object_list]
@@ -103,21 +103,21 @@ for d in object_dir:
     obj = cv2.imread(d)         
     obj = cv2.resize(obj,(700,500))  
     p = CVision.get_object(obj,canny_param_1=35,canny_param_2=135,min_area=5500,min_perimeter=300)
-{% endhighlight %}
+```
 
     converting image to grayscale
     top left point:  (348, 291) width and height:  (98, 134) contour area:  9795.5  perimeter:  455.60511887073517  is convex: False  square area:  11883.12688961171
 
 
 
-<p><img src='computervision_images/output_5_1.png' /></p>
+![png](output_5_1.png)
 
 
     top left point:  (348, 294) width and height:  (94, 134) contour area:  9735.5  perimeter:  397.8061306476593  is convex: False  square area:  11430.213565401267
 
 
 
-<p><img src='computervision_images/output_5_3.png' /></p>
+![png](output_5_3.png)
 
 
     top left point:  (1, 1) width and height:  (229, 353) contour area:  254.0  perimeter:  1052.8468807935715  is convex: False  square area:  2528.2057477928465
@@ -133,14 +133,14 @@ for d in object_dir:
 
 
 
-<p><img src='computervision_images/output_5_5.png' /></p>
+![png](output_5_5.png)
 
 
     top left point:  (284, 288) width and height:  (84, 117) contour area:  7601.5  perimeter:  345.86500453948975  is convex: False  square area:  8793.360398303135
 
 
 
-<p><img src='computervision_images/output_5_7.png' /></p>
+![png](output_5_7.png)
 
 
     top left point:  (1, 1) width and height:  (229, 355) contour area:  247.0  perimeter:  1086.160588979721  is convex: False  square area:  2667.6332785105915
@@ -156,28 +156,28 @@ for d in object_dir:
 
 
 
-<p><img src='computervision_images/output_5_9.png' /></p>
+![png](output_5_9.png)
 
 
     top left point:  (61, 411) width and height:  (160, 194) contour area:  22474.5  perimeter:  679.9970378875732  is convex: False  square area:  27898.05095772352
 
 
 
-<p><img src='computervision_images/output_5_11.png' /></p>
+![png](output_5_11.png)
 
 
     top left point:  (90, 418) width and height:  (145, 156) contour area:  18131.0  perimeter:  499.2447339296341  is convex: False  square area:  22197.62906224467
 
 
 
-<p><img src='computervision_images/output_5_13.png' /></p>
+![png](output_5_13.png)
 
 
     top left point:  (90, 418) width and height:  (145, 156) contour area:  17971.0  perimeter:  496.90158772468567  is convex: False  square area:  22197.62906224467
 
 
 
-<p><img src='computervision_images/output_5_15.png' /></p>
+![png](output_5_15.png)
 
 
     top left point:  (304, 503) width and height:  (173, 149) contour area:  3579.0  perimeter:  5336.025050520897  is convex: False  square area:  24709.63999960944
@@ -191,7 +191,7 @@ for d in object_dir:
 
 
 
-<p><img src='computervision_images/output_5_17.png' /></p>
+![png](output_5_17.png)
 
 
     top left point:  (185, 140) width and height:  (124, 87) contour area:  5203.0  perimeter:  1090.0529463291168  is convex: False  square area:  8650.639746287197
@@ -206,14 +206,14 @@ for d in object_dir:
 
 
 
-{% highlight python %}
+```python
 
-{% endhighlight %}
+```
 
 ### 2D convolution with Contant Border = 0
 
 
-{% highlight python %}
+```python
 def apply_3_channels(img, function, args):
     assert len(img.shape[:])==3
     n = img.shape[2]
@@ -296,94 +296,94 @@ unsharp_mask = apply_3_channels(img.copy(), cv2.addWeighted, (1.5,unsharp_mask.c
 plt.figure(figsize=(7,5))
 plt.title("Unsharp mask")
 CVision.cv2_to_plt(unsharp_mask)
-{% endhighlight %}
+```
 
 
-<p><img src='computervision_images/output_8_0.png' /></p>
-
-
-    converting image to grayscale
-
-
-
-<p><img src='computervision_images/output_8_2.png' /></p>
+![png](output_8_0.png)
 
 
     converting image to grayscale
 
 
 
-<p><img src='computervision_images/output_8_4.png' /></p>
+![png](output_8_2.png)
 
 
     converting image to grayscale
 
 
 
-<p><img src='computervision_images/output_8_6.png' /></p>
+![png](output_8_4.png)
 
 
     converting image to grayscale
 
 
 
-<p><img src='computervision_images/output_8_8.png' /></p>
+![png](output_8_6.png)
 
 
     converting image to grayscale
 
 
 
-<p><img src='computervision_images/output_8_10.png' /></p>
+![png](output_8_8.png)
 
 
     converting image to grayscale
 
 
 
-<p><img src='computervision_images/output_8_12.png' /></p>
+![png](output_8_10.png)
+
+
+    converting image to grayscale
+
+
+
+![png](output_8_12.png)
 
 
 ### Spectral phase correlation & Image matching 
 
 
-{% highlight python %}
+```python
 img1 = cv2.imread("image_dump/football.png")
 img2 = cv2.imread("image_dump/football_subset.png")
 
 CVision.cv2_to_plt(img1)
 CVision.cv2_to_plt(img2)
-{% endhighlight %}
+```
 
 
-<p><img src='computervision_images/output_10_0.png' /></p>
-
-
-
-<p><img src='computervision_images/output_10_1.png' /></p>
+![png](output_10_0.png)
 
 
 
-{% highlight python %}
+![png](output_10_1.png)
+
+
+
+```python
 corr,pt1,pt2=CVision.sliding_phase_correlation(img1, img2, min_corr=0.95,plot=False)
-{% endhighlight %}
+```
 
     converting image to grayscale
     converting image to grayscale
 
 
 
-{% highlight python %}
+```python
 CVision.cv2_to_plt(cv2.rectangle(img1.copy(),pt1[2],pt2[2],color=(100,100,20),thickness=2))
 plt.close()
-{% endhighlight %}
+```
 
 
-<p><img src='computervision_images/output_12_0.png' /></p>
+![png](output_12_0.png)
 
 
 
-{% highlight python %}
+```python
 img1 = cv2.imread("image_dump/text.jpeg")
 img2 = cv2.imread("image_dump/d.jpeg")
 
@@ -391,14 +391,14 @@ CVision.cv2_to_plt(img1)
 CVision.cv2_to_plt(img2)
 
 corr,pt1,pt2=CVision.sliding_phase_correlation(img1, img2, min_corr=0.99,plot=False)
-{% endhighlight %}
+```
 
 
-<p><img src='computervision_images/output_13_0.png' /></p>
+![png](output_13_0.png)
 
 
 
-<p><img src='computervision_images/output_13_1.png' /></p>
+![png](output_13_1.png)
 
 
     converting image to grayscale
@@ -406,9 +406,9 @@ corr,pt1,pt2=CVision.sliding_phase_correlation(img1, img2, min_corr=0.99,plot=Fa
 
 
 
-{% highlight python %}
+```python
 [(c,(y1,x1)) for (c,(y1,x1)) in zip(corr,pt1)]
-{% endhighlight %}
+```
 
 
 
@@ -430,23 +430,23 @@ corr,pt1,pt2=CVision.sliding_phase_correlation(img1, img2, min_corr=0.99,plot=Fa
 
 
 
-{% highlight python %}
+```python
 img3 = img1.copy()
 for p1,p2 in zip(pt1,pt2):
     img3 = cv2.rectangle(img3,p1,p2,color=(100,100,20),thickness=2)
 
 CVision.cv2_to_plt(img3)
 plt.close()
-{% endhighlight %}
+```
 
 
-<p><img src='computervision_images/output_15_0.png' /></p>
+![png](output_15_0.png)
 
 
 ### Image signiture with average brightnesses (Image database or Exact matching)
 
 
-{% highlight python %}
+```python
 import urllib.request
 file = open("/Users/rohankotwani/Downloads/craters.txt").read().split("\n")
 i=0
@@ -466,14 +466,14 @@ for link in file[:5]:
     print("Average bright by quadrant")
     print("upper right: ",upperright,"upper left: ",upperleft,"lower left: ",lowerleft,"lower right: ",lowerright)
     print()
-{% endhighlight %}
+```
 
     link:  http://cdn.touropia.com/gfx/d/impact-craters-on-earth/roter_kamm_crater.jpg?v=186603f7e16e01c8707cffc7a3f316a2
     converting image to grayscale
 
 
 
-<p><img src='computervision_images/output_17_1.png' /></p>
+![png](output_17_1.png)
 
 
     Average bright by quadrant
@@ -484,7 +484,7 @@ for link in file[:5]:
 
 
 
-<p><img src='computervision_images/output_17_3.png' /></p>
+![png](output_17_3.png)
 
 
     Average bright by quadrant
@@ -495,7 +495,7 @@ for link in file[:5]:
 
 
 
-<p><img src='computervision_images/output_17_5.png' /></p>
+![png](output_17_5.png)
 
 
     Average bright by quadrant
@@ -506,7 +506,7 @@ for link in file[:5]:
 
 
 
-<p><img src='computervision_images/output_17_7.png' /></p>
+![png](output_17_7.png)
 
 
     Average bright by quadrant
@@ -517,7 +517,7 @@ for link in file[:5]:
 
 
 
-<p><img src='computervision_images/output_17_9.png' /></p>
+![png](output_17_9.png)
 
 
     Average bright by quadrant
@@ -528,75 +528,75 @@ for link in file[:5]:
 ### Warping an Image
 
 
-{% highlight python %}
+```python
 cage = cv2.imread("image_dump/cage.jpeg")
 for k in np.linspace(0,1,2):
     for i in np.linspace(.0,.2,2):
         for j in np.linspace(.0,.2,2):
             print(i,j,"flip: ",k)
             CVision.cv2_to_plt(CVision.im_warp_right(CVision.im_flip(cage,k),j,i))
-{% endhighlight %}
+```
 
     0.0 0.0 flip:  0.0
 
 
 
-<p><img src='computervision_images/output_19_1.png' /></p>
+![png](output_19_1.png)
 
 
     0.0 0.2 flip:  0.0
 
 
 
-<p><img src='computervision_images/output_19_3.png' /></p>
+![png](output_19_3.png)
 
 
     0.2 0.0 flip:  0.0
 
 
 
-<p><img src='computervision_images/output_19_5.png' /></p>
+![png](output_19_5.png)
 
 
     0.2 0.2 flip:  0.0
 
 
 
-<p><img src='computervision_images/output_19_7.png' /></p>
+![png](output_19_7.png)
 
 
     0.0 0.0 flip:  1.0
 
 
 
-<p><img src='computervision_images/output_19_9.png' /></p>
+![png](output_19_9.png)
 
 
     0.0 0.2 flip:  1.0
 
 
 
-<p><img src='computervision_images/output_19_11.png' /></p>
+![png](output_19_11.png)
 
 
     0.2 0.0 flip:  1.0
 
 
 
-<p><img src='computervision_images/output_19_13.png' /></p>
+![png](output_19_13.png)
 
 
     0.2 0.2 flip:  1.0
 
 
 
-<p><img src='computervision_images/output_19_15.png' /></p>
+![png](output_19_15.png)
 
 
 ### Object Matching & Image stitching
 
 
-{% highlight python %}
+```python
 importlib.reload(CVision)
 tag1 = cv2.imread("star_bucks/star-bucks1.jpeg")
 plt.figure(figsize=(7,5))
@@ -635,10 +635,10 @@ for i in range(2,9):
     rsq_heap.append((1-SSE/SST,i))
     
 Regression.heapsort(rsq_heap)
-{% endhighlight %}
+```
 
 
-<p><img src='computervision_images/output_21_0.png' /></p>
+![png](output_21_0.png)
 
 
     converting image to grayscale
@@ -646,11 +646,11 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_2.png' /></p>
+![png](output_21_2.png)
 
 
 
-<p><img src='computervision_images/output_21_3.png' /></p>
+![png](output_21_3.png)
 
 
     image number:  2
@@ -661,7 +661,7 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_5.png' /></p>
+![png](output_21_5.png)
 
 
     converting image to grayscale
@@ -669,11 +669,11 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_7.png' /></p>
+![png](output_21_7.png)
 
 
 
-<p><img src='computervision_images/output_21_8.png' /></p>
+![png](output_21_8.png)
 
 
     image number:  3
@@ -684,7 +684,7 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_10.png' /></p>
+![png](output_21_10.png)
 
 
     converting image to grayscale
@@ -692,11 +692,11 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_12.png' /></p>
+![png](output_21_12.png)
 
 
 
-<p><img src='computervision_images/output_21_13.png' /></p>
+![png](output_21_13.png)
 
 
     image number:  4
@@ -707,7 +707,7 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_15.png' /></p>
+![png](output_21_15.png)
 
 
     converting image to grayscale
@@ -715,11 +715,11 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_17.png' /></p>
+![png](output_21_17.png)
 
 
 
-<p><img src='computervision_images/output_21_18.png' /></p>
+![png](output_21_18.png)
 
 
     image number:  5
@@ -730,7 +730,7 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_20.png' /></p>
+![png](output_21_20.png)
 
 
     converting image to grayscale
@@ -738,11 +738,11 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_22.png' /></p>
+![png](output_21_22.png)
 
 
 
-<p><img src='computervision_images/output_21_23.png' /></p>
+![png](output_21_23.png)
 
 
     image number:  6
@@ -753,7 +753,7 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_25.png' /></p>
+![png](output_21_25.png)
 
 
     converting image to grayscale
@@ -761,11 +761,11 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_27.png' /></p>
+![png](output_21_27.png)
 
 
 
-<p><img src='computervision_images/output_21_28.png' /></p>
+![png](output_21_28.png)
 
 
     image number:  7
@@ -776,7 +776,7 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_30.png' /></p>
+![png](output_21_30.png)
 
 
     converting image to grayscale
@@ -784,11 +784,11 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_32.png' /></p>
+![png](output_21_32.png)
 
 
 
-<p><img src='computervision_images/output_21_33.png' /></p>
+![png](output_21_33.png)
 
 
     image number:  8
@@ -799,7 +799,7 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_35.png' /></p>
+![png](output_21_35.png)
 
 
 
@@ -818,7 +818,7 @@ Regression.heapsort(rsq_heap)
 ### Seam Carving with Sobel energy matrix and dynamic programming
 
 
-{% highlight python %}
+```python
 import importlib
 import CVision
 importlib.reload(CVision)
@@ -830,22 +830,21 @@ CVision.cv2_to_plt(img)
 img2,seams = CVision.remove_n_vertical_seams(img.copy(),n=200,plot=True)
 plt.figure(figsize=(7,5))
 CVision.cv2_to_plt(img2)
-{% endhighlight %}
+```
 
 
-<p><img src='computervision_images/output_23_0.png' /></p>
-
-
-
-<p><img src='computervision_images/output_23_1.png' /></p>
+![png](output_23_0.png)
 
 
 
-<p><img src='computervision_images/output_23_2.png' /></p>
+![png](output_23_1.png)
 
 
 
-{% highlight python %}
+![png](output_23_2.png)
 
-{% endhighlight %}
 
+
+```python
+
+```
