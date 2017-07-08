@@ -1,4 +1,17 @@
+---
+layout: post
+title:  "Custom Computer Vision Library"
+date: 2017-07-06 12:00:00
+author: Rohan Kotwani
+excerpt: "Custom library for computer vision algorithms"
+tags: 
+- Seam Carving
+- Object Detection
+- Filtering
+- Phase Correlation
+- Perspective transforms
 
+---
 
 {% highlight python %}
 import importlib
