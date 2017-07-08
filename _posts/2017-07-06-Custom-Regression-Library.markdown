@@ -64,7 +64,7 @@ return [heapq.heappop(h) for i in range(len(h))]
 heap = []
 for i in range(1,15):
 z=Regression.sklearn_poly_regression(train[['sqft_living']],train[['price']],i)
-SSE = Regression.numpy_poly_regression_SSE(valid[['sqft_living']],valid[['price']],i,z)
+SSE = Regression.numpy_poly_/regression_SSE(valid[['sqft_living']],valid[['price']],i,z)
 heap.append((SSE,i))
 heapsort(heap)
 {% endhighlight %}
@@ -195,7 +195,7 @@ plt.close()
 {% endhighlight %}
 
 
-<p><img src='regression_images/output_13_0.png' /></p>)
+<p><img src='/regression_images/output_13_0.png' /></p>)
 
 
 ### Lasso Regression - Choose L1 Penalty
@@ -354,7 +354,7 @@ plt.close()
 {% endhighlight %}
 
 
-<p><img src='regression_images/output_19_0.png' /></p>)
+<p><img src='/regression_images/output_19_0.png' /></p>)
 
 
 ### Lasso Regression - Get Penalty Range For a Given Number of Dimensions
@@ -681,7 +681,7 @@ plt.close()
 {% endhighlight %}
 
 
-<p><img src='regression_images/output_27_0.png' /></p>)
+<p><img src='/regression_images/output_27_0.png' /></p>)
 
 
 ### Inverse Distance Kernel Regression - Choose K
