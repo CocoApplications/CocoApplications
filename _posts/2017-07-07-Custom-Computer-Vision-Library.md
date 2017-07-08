@@ -51,11 +51,11 @@ for c in cluster:
 {% endhighlight %}
 
 
-<p><img src='computervision_images/output_3_0.png' /></p>
+<p><img src='/computervision_images/output_3_0.png' /></p>
 
 
 
-<p><img src='computervision_images/output_3_1.png' /></p>
+<p><img src='/computervision_images/output_3_1.png' /></p>
 
 
     [[  68.22302368  112.6797825     7.62179926]
@@ -70,39 +70,39 @@ for c in cluster:
 
 
 
-<p><img src='computervision_images/output_3_3.png' /></p>
+<p><img src='/computervision_images/output_3_3.png' /></p>
 
 
 
-<p><img src='computervision_images/output_3_4.png' /></p>
+<p><img src='/computervision_images/output_3_4.png' /></p>
 
 
 
-<p><img src='computervision_images/output_3_5.png' /></p>
+<p><img src='/computervision_images/output_3_5.png' /></p>
 
 
 
-<p><img src='computervision_images/output_3_6.png' /></p>
+<p><img src='/computervision_images/output_3_6.png' /></p>
 
 
 
-<p><img src='computervision_images/output_3_7.png' /></p>
+<p><img src='/computervision_images/output_3_7.png' /></p>
 
 
 
-<p><img src='computervision_images/output_3_8.png' /></p>
+<p><img src='/computervision_images/output_3_8.png' /></p>
 
 
 
-<p><img src='computervision_images/output_3_9.png' /></p>
+<p><img src='/computervision_images/output_3_9.png' /></p>
 
 
 
-<p><img src='computervision_images/output_3_10.png' /></p>
+<p><img src='/computervision_images/output_3_10.png' /></p>
 
 
 
-<p><img src='computervision_images/output_3_11.png' /></p>
+<p><img src='/computervision_images/output_3_11.png' /></p>
 
 
 ### Object Detection with Canny Filter
@@ -123,14 +123,14 @@ for d in object_dir:
 
 
 
-<p><img src='computervision_images/output_5_1.png' /></p>
+<p><img src='/computervision_images/output_5_1.png' /></p>
 
 
     top left point:  (348, 294) width and height:  (94, 134) contour area:  9735.5  perimeter:  397.8061306476593  is convex: False  square area:  11430.213565401267
 
 
 
-<p><img src='computervision_images/output_5_3.png' /></p>
+<p><img src='/computervision_images/output_5_3.png' /></p>
 
 
     top left point:  (1, 1) width and height:  (229, 353) contour area:  254.0  perimeter:  1052.8468807935715  is convex: False  square area:  2528.2057477928465
@@ -146,14 +146,14 @@ for d in object_dir:
 
 
 
-<p><img src='computervision_images/output_5_5.png' /></p>
+<p><img src='/computervision_images/output_5_5.png' /></p>
 
 
     top left point:  (284, 288) width and height:  (84, 117) contour area:  7601.5  perimeter:  345.86500453948975  is convex: False  square area:  8793.360398303135
 
 
 
-<p><img src='computervision_images/output_5_7.png' /></p>
+<p><img src='/computervision_images/output_5_7.png' /></p>
 
 
     top left point:  (1, 1) width and height:  (229, 355) contour area:  247.0  perimeter:  1086.160588979721  is convex: False  square area:  2667.6332785105915
@@ -169,28 +169,28 @@ for d in object_dir:
 
 
 
-<p><img src='computervision_images/output_5_9.png' /></p>
+<p><img src='/computervision_images/output_5_9.png' /></p>
 
 
     top left point:  (61, 411) width and height:  (160, 194) contour area:  22474.5  perimeter:  679.9970378875732  is convex: False  square area:  27898.05095772352
 
 
 
-<p><img src='computervision_images/output_5_11.png' /></p>
+<p><img src='/computervision_images/output_5_11.png' /></p>
 
 
     top left point:  (90, 418) width and height:  (145, 156) contour area:  18131.0  perimeter:  499.2447339296341  is convex: False  square area:  22197.62906224467
 
 
 
-<p><img src='computervision_images/output_5_13.png' /></p>
+<p><img src='/computervision_images/output_5_13.png' /></p>
 
 
     top left point:  (90, 418) width and height:  (145, 156) contour area:  17971.0  perimeter:  496.90158772468567  is convex: False  square area:  22197.62906224467
 
 
 
-<p><img src='computervision_images/output_5_15.png' /></p>
+<p><img src='/computervision_images/output_5_15.png' /></p>
 
 
     top left point:  (304, 503) width and height:  (173, 149) contour area:  3579.0  perimeter:  5336.025050520897  is convex: False  square area:  24709.63999960944
@@ -204,7 +204,7 @@ for d in object_dir:
 
 
 
-<p><img src='computervision_images/output_5_17.png' /></p>
+<p><img src='/computervision_images/output_5_17.png' /></p>
 
 
     top left point:  (185, 140) width and height:  (124, 87) contour area:  5203.0  perimeter:  1090.0529463291168  is convex: False  square area:  8650.639746287197
@@ -312,49 +312,49 @@ CVision.cv2_to_plt(unsharp_mask)
 {% endhighlight %}
 
 
-<p><img src='computervision_images/output_8_0.png' /></p>
+<p><img src='/computervision_images/output_8_0.png' /></p>
 
 
     converting image to grayscale
 
 
 
-<p><img src='computervision_images/output_8_2.png' /></p>
+<p><img src='/computervision_images/output_8_2.png' /></p>
 
 
     converting image to grayscale
 
 
 
-<p><img src='computervision_images/output_8_4.png' /></p>
+<p><img src='/computervision_images/output_8_4.png' /></p>
 
 
     converting image to grayscale
 
 
 
-<p><img src='computervision_images/output_8_6.png' /></p>
+<p><img src='/computervision_images/output_8_6.png' /></p>
 
 
     converting image to grayscale
 
 
 
-<p><img src='computervision_images/output_8_8.png' /></p>
+<p><img src='/computervision_images/output_8_8.png' /></p>
 
 
     converting image to grayscale
 
 
 
-<p><img src='computervision_images/output_8_10.png' /></p>
+<p><img src='/computervision_images/output_8_10.png' /></p>
 
 
     converting image to grayscale
 
 
 
-<p><img src='computervision_images/output_8_12.png' /></p>
+<p><img src='/computervision_images/output_8_12.png' /></p>
 
 
 ### Spectral phase correlation & Image matching 
@@ -369,11 +369,11 @@ CVision.cv2_to_plt(img2)
 {% endhighlight %}
 
 
-<p><img src='computervision_images/output_10_0.png' /></p>
+<p><img src='/computervision_images/output_10_0.png' /></p>
 
 
 
-<p><img src='computervision_images/output_10_1.png' /></p>
+<p><img src='/computervision_images/output_10_1.png' /></p>
 
 
 
@@ -392,7 +392,7 @@ plt.close()
 {% endhighlight %}
 
 
-<p><img src='computervision_images/output_12_0.png' /></p>
+<p><img src='/computervision_images/output_12_0.png' /></p>
 
 
 
@@ -407,11 +407,11 @@ corr,pt1,pt2=CVision.sliding_phase_correlation(img1, img2, min_corr=0.99,plot=Fa
 {% endhighlight %}
 
 
-<p><img src='computervision_images/output_13_0.png' /></p>
+<p><img src='/computervision_images/output_13_0.png' /></p>
 
 
 
-<p><img src='computervision_images/output_13_1.png' /></p>
+<p><img src='/computervision_images/output_13_1.png' /></p>
 
 
     converting image to grayscale
@@ -453,7 +453,7 @@ plt.close()
 {% endhighlight %}
 
 
-<p><img src='computervision_images/output_15_0.png' /></p>
+<p><img src='/computervision_images/output_15_0.png' /></p>
 
 
 ### Image signiture with average brightnesses (Image database or Exact matching)
@@ -486,7 +486,7 @@ for link in file[:5]:
 
 
 
-<p><img src='computervision_images/output_17_1.png' /></p>
+<p><img src='/computervision_images/output_17_1.png' /></p>
 
 
     Average bright by quadrant
@@ -497,7 +497,7 @@ for link in file[:5]:
 
 
 
-<p><img src='computervision_images/output_17_3.png' /></p>
+<p><img src='/computervision_images/output_17_3.png' /></p>
 
 
     Average bright by quadrant
@@ -508,7 +508,7 @@ for link in file[:5]:
 
 
 
-<p><img src='computervision_images/output_17_5.png' /></p>
+<p><img src='/computervision_images/output_17_5.png' /></p>
 
 
     Average bright by quadrant
@@ -519,7 +519,7 @@ for link in file[:5]:
 
 
 
-<p><img src='computervision_images/output_17_7.png' /></p>
+<p><img src='/computervision_images/output_17_7.png' /></p>
 
 
     Average bright by quadrant
@@ -530,7 +530,7 @@ for link in file[:5]:
 
 
 
-<p><img src='computervision_images/output_17_9.png' /></p>
+<p><img src='/computervision_images/output_17_9.png' /></p>
 
 
     Average bright by quadrant
@@ -554,56 +554,56 @@ for k in np.linspace(0,1,2):
 
 
 
-<p><img src='computervision_images/output_19_1.png' /></p>
+<p><img src='/computervision_images/output_19_1.png' /></p>
 
 
     0.0 0.2 flip:  0.0
 
 
 
-<p><img src='computervision_images/output_19_3.png' /></p>
+<p><img src='/computervision_images/output_19_3.png' /></p>
 
 
     0.2 0.0 flip:  0.0
 
 
 
-<p><img src='computervision_images/output_19_5.png' /></p>
+<p><img src='/computervision_images/output_19_5.png' /></p>
 
 
     0.2 0.2 flip:  0.0
 
 
 
-<p><img src='computervision_images/output_19_7.png' /></p>
+<p><img src='/computervision_images/output_19_7.png' /></p>
 
 
     0.0 0.0 flip:  1.0
 
 
 
-<p><img src='computervision_images/output_19_9.png' /></p>
+<p><img src='/computervision_images/output_19_9.png' /></p>
 
 
     0.0 0.2 flip:  1.0
 
 
 
-<p><img src='computervision_images/output_19_11.png' /></p>
+<p><img src='/computervision_images/output_19_11.png' /></p>
 
 
     0.2 0.0 flip:  1.0
 
 
 
-<p><img src='computervision_images/output_19_13.png' /></p>
+<p><img src='/computervision_images/output_19_13.png' /></p>
 
 
     0.2 0.2 flip:  1.0
 
 
 
-<p><img src='computervision_images/output_19_15.png' /></p>
+<p><img src='/computervision_images/output_19_15.png' /></p>
 
 
 ### Object Matching & Image stitching
@@ -651,7 +651,7 @@ Regression.heapsort(rsq_heap)
 {% endhighlight %}
 
 
-<p><img src='computervision_images/output_21_0.png' /></p>
+<p><img src='/computervision_images/output_21_0.png' /></p>
 
 
     converting image to grayscale
@@ -659,11 +659,11 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_2.png' /></p>
+<p><img src='/computervision_images/output_21_2.png' /></p>
 
 
 
-<p><img src='computervision_images/output_21_3.png' /></p>
+<p><img src='/computervision_images/output_21_3.png' /></p>
 
 
     image number:  2
@@ -674,7 +674,7 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_5.png' /></p>
+<p><img src='/computervision_images/output_21_5.png' /></p>
 
 
     converting image to grayscale
@@ -682,11 +682,11 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_7.png' /></p>
+<p><img src='/computervision_images/output_21_7.png' /></p>
 
 
 
-<p><img src='computervision_images/output_21_8.png' /></p>
+<p><img src='/computervision_images/output_21_8.png' /></p>
 
 
     image number:  3
@@ -697,7 +697,7 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_10.png' /></p>
+<p><img src='/computervision_images/output_21_10.png' /></p>
 
 
     converting image to grayscale
@@ -705,11 +705,11 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_12.png' /></p>
+<p><img src='/computervision_images/output_21_12.png' /></p>
 
 
 
-<p><img src='computervision_images/output_21_13.png' /></p>
+<p><img src='/computervision_images/output_21_13.png' /></p>
 
 
     image number:  4
@@ -720,7 +720,7 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_15.png' /></p>
+<p><img src='/computervision_images/output_21_15.png' /></p>
 
 
     converting image to grayscale
@@ -728,11 +728,11 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_17.png' /></p>
+<p><img src='/computervision_images/output_21_17.png' /></p>
 
 
 
-<p><img src='computervision_images/output_21_18.png' /></p>
+<p><img src='/computervision_images/output_21_18.png' /></p>
 
 
     image number:  5
@@ -743,7 +743,7 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_20.png' /></p>
+<p><img src='/computervision_images/output_21_20.png' /></p>
 
 
     converting image to grayscale
@@ -751,11 +751,11 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_22.png' /></p>
+<p><img src='/computervision_images/output_21_22.png' /></p>
 
 
 
-<p><img src='computervision_images/output_21_23.png' /></p>
+<p><img src='/computervision_images/output_21_23.png' /></p>
 
 
     image number:  6
@@ -766,7 +766,7 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_25.png' /></p>
+<p><img src='/computervision_images/output_21_25.png' /></p>
 
 
     converting image to grayscale
@@ -774,11 +774,11 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_27.png' /></p>
+<p><img src='/computervision_images/output_21_27.png' /></p>
 
 
 
-<p><img src='computervision_images/output_21_28.png' /></p>
+<p><img src='/computervision_images/output_21_28.png' /></p>
 
 
     image number:  7
@@ -789,7 +789,7 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_30.png' /></p>
+<p><img src='/computervision_images/output_21_30.png' /></p>
 
 
     converting image to grayscale
@@ -797,11 +797,11 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_32.png' /></p>
+<p><img src='/computervision_images/output_21_32.png' /></p>
 
 
 
-<p><img src='computervision_images/output_21_33.png' /></p>
+<p><img src='/computervision_images/output_21_33.png' /></p>
 
 
     image number:  8
@@ -812,7 +812,7 @@ Regression.heapsort(rsq_heap)
 
 
 
-<p><img src='computervision_images/output_21_35.png' /></p>
+<p><img src='/computervision_images/output_21_35.png' /></p>
 
 
 
@@ -846,15 +846,15 @@ CVision.cv2_to_plt(img2)
 {% endhighlight %}
 
 
-<p><img src='computervision_images/output_23_0.png' /></p>
+<p><img src='/computervision_images/output_23_0.png' /></p>
 
 
 
-<p><img src='computervision_images/output_23_1.png' /></p>
+<p><img src='/computervision_images/output_23_1.png' /></p>
 
 
 
-<p><img src='computervision_images/output_23_2.png' /></p>
+<p><img src='/computervision_images/output_23_2.png' /></p>
 
 
 
