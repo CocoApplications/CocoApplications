@@ -39,8 +39,6 @@ Worker Participation Groups expanded into training programs in the 1990s. There 
 
 The first step in Lean Manufacturing is to keep "lean management" separate from regular operations. A separate organization dedicated to Lean systems would result in fewer conflicting priorities. A lean manager assigned to a facility would have a "sensei", teacher role. The manager would teach a council of leaders in the facility to steer lean projects.
 
-<A NAME=name></A>
-
 ### Lean Process
 
 As in the Philosophy, there are steps to achieve the Lean Process. The process can be best described as the equipment used to create a product with pre-determined requirements. The tools involved in the Process are "Kaizen or Continuous Improvement" and "Mudha or Waste Elimination." Instead of implying that workers should be continuously improving and eliminating waste, the Lean Process accomplishes this with its successful implementation.
