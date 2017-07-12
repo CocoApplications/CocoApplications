@@ -1,3 +1,14 @@
+---
+layout: post
+title:  "Lean Manufacturing - Extended Definition"
+date: 2015-06-01 12:00:00
+author: Rohan Kotwani
+excerpt: "An extended definition of the Lean Manufacturing concept"
+tags: 
+- Lean
+
+---
+
 # Lean Manufacturing
 Lean Manufacturing is the project management system of reducing waste, managing labor efficiency, and providing a framework to solve problems. Lean manufacturing is one system under the Lean "umbrella" of project management. There are many practical applications with various Lean systems.
 
