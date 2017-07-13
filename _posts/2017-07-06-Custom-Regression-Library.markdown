@@ -13,9 +13,22 @@ tags:
 
 ---
 
+## Introduction
 
 This post is mostly used to reference regression alogrithms that will eventually be used in bigger projects and more complicated models. For this reason, the descriptions and plots are kept to a minimum.
 
+## Table of Contents
+
+1. Polynomial Regression
+2. Vanilla Gradient Descent
+3. Polynomial Ridge Regression
+4. Polynomial Ridge Regression - K Fold Cross Validation - Choose L2 Penalty
+5. Ridge Regression - Gradient Descent
+6. Lasso Regression - Choose L1 Penalty
+7. Lasso Regression - Get Penalty Range
+8. KNN - Choose K
+9. Gaussian Kernel Regression - Choose K & B
+10. Inverse Distance Kernel Regression - Choose K
 
 
 {% highlight python %}

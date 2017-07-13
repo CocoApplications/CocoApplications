@@ -13,6 +13,21 @@ tags:
 
 ---
 
+## Introduction
+
+This post show a combination of both common and novel computer vision algorithms.
+
+## Table of Contents
+
+1. K-means Clustering & Image Segmentation
+2. Object Detection with Canny Filter
+3. 2D convolution with Constant Border = 0
+4. Spectral Phase Correlation & Image Matching 
+5. Image Signatures- Average Brightnesses (For Image Database)
+6. Warping an Image
+7. Object Matching & Image Stitching
+8. Seam Carving with Sobel Energy Matrix and Dynamic Programming
+
 {% highlight python %}
 import importlib
 import CVision
@@ -357,7 +372,7 @@ CVision.cv2_to_plt(unsharp_mask)
 <p><img src='/computervision_images/output_8_12.png' /></p>
 
 
-### Spectral phase correlation & Image matching 
+### Spectral Phase Correlation & Image Matching 
 
 
 {% highlight python %}
@@ -456,7 +471,7 @@ plt.close()
 <p><img src='/computervision_images/output_15_0.png' /></p>
 
 
-### Image signiture with average brightnesses (Image database or Exact matching)
+### Image Signature with Average Brightnesses (For Image Database or Exact matching)
 
 
 {% highlight python %}
@@ -606,7 +621,7 @@ for k in np.linspace(0,1,2):
 <p><img src='/computervision_images/output_19_15.png' /></p>
 
 
-### Object Matching & Image stitching
+### Object Matching & Image Stitching
 
 
 {% highlight python %}
@@ -828,7 +843,7 @@ Regression.heapsort(rsq_heap)
 
 
 
-### Seam Carving with Sobel energy matrix and dynamic programming
+### Seam Carving with Sobel Energy Matrix and Dynamic Programming
 
 
 {% highlight python %}
