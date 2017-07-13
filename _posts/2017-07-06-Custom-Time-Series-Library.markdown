@@ -10,10 +10,6 @@ tags:
 
 ---
 
-## Introduction
-
-Here is a brief overview of how signal processing techniques can non-stationary time series that depend on multiple dimensions. This is constrasted with existing, prepackaged, time series modelling techniques such as the autoregressive integrated moving average, ARIMA, models. 
-
 ## Table of Contents
 
 1. Differencing
@@ -23,6 +19,11 @@ Here is a brief overview of how signal processing techniques can non-stationary 
 5. Seasonal Component with Waveform Generation
 6. Seasonal Regression with LASSO Feature Selection
 7. Statmodels ARIMA modeling
+
+## Introduction
+
+Here is a brief overview of how signal processing techniques can non-stationary time series that depend on multiple dimensions. This is constrasted with existing, prepackaged, time series modelling techniques such as the autoregressive integrated moving average, ARIMA, models. 
+
 
 {% highlight python %}
 import importlib

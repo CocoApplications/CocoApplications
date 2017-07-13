@@ -13,10 +13,6 @@ tags:
 
 ---
 
-## Introduction
-
-This post show a combination of both common and novel computer vision algorithms.
-
 ## Table of Contents
 
 1. K-means Clustering & Image Segmentation
@@ -25,8 +21,13 @@ This post show a combination of both common and novel computer vision algorithms
 4. Spectral Phase Correlation & Image Matching 
 5. Image Signatures- Average Brightnesses (For Image Database)
 6. Warping an Image
-7. Object Matching & Image Stitching
+7. Object Matching & Image Stitching (Novel)
 8. Seam Carving with Sobel Energy Matrix and Dynamic Programming
+
+## Introduction
+
+This post show a combination of both common and novel computer vision algorithms.
+
 
 {% highlight python %}
 import importlib
