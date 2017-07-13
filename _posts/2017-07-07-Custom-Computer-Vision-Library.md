@@ -26,7 +26,7 @@ tags:
 
 ## Introduction
 
-This post show a combination of both common and novel computer vision algorithms.
+This post show a combination of both common and novel computer vision algorithms using OpenCV and Numpy. The spectral phase correlation and image stitching use for image matching and object matching, respectively, are novel applications.
 
 
 {% highlight python %}
