@@ -466,94 +466,6 @@ full
       <td>0</td>
       <td>941</td>
     </tr>
-    <tr>
-      <th>90472</th>
-      <td>76</td>
-      <td>5</td>
-      <td>2015-07-31</td>
-      <td>12887</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>941</td>
-    </tr>
-    <tr>
-      <th>90473</th>
-      <td>77</td>
-      <td>5</td>
-      <td>2015-07-31</td>
-      <td>10335</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>941</td>
-    </tr>
-    <tr>
-      <th>90474</th>
-      <td>78</td>
-      <td>5</td>
-      <td>2015-07-31</td>
-      <td>5712</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>941</td>
-    </tr>
-    <tr>
-      <th>90475</th>
-      <td>79</td>
-      <td>5</td>
-      <td>2015-07-31</td>
-      <td>7150</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>941</td>
-    </tr>
-    <tr>
-      <th>90476</th>
-      <td>8</td>
-      <td>5</td>
-      <td>2015-07-31</td>
-      <td>8492</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>941</td>
-    </tr>
-    <tr>
-      <th>90477</th>
-      <td>80</td>
-      <td>5</td>
-      <td>2015-07-31</td>
-      <td>9810</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>941</td>
-    </tr>
-    <tr>
-      <th>90478</th>
-      <td>81</td>
-      <td>5</td>
-      <td>2015-07-31</td>
-      <td>9279</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>941</td>
-    </tr>
-    <tr>
-      <th>90479</th>
-      <td>82</td>
-      <td>5</td>
-      <td>2015-07-31</td>
-      <td>11492</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>941</td>
-    </tr>
     </tbody>
 </table>
 <p>90498 rows × 8 columns</p>
@@ -579,7 +491,7 @@ plt.show()
 {% endhighlight %}
 
 
-<p><img src='rossman_stores_example/output_59_0.png' /></p>
+<p><img src='/rossman_stores_example/output_59_0.png' /></p>
 
 
 
@@ -609,7 +521,7 @@ plt.show()
 {% endhighlight %}
 
 
-<p><img src='rossman_stores_example/output_62_0.png' /></p>
+<p><img src='/rossman_stores_example/output_62_0.png' /></p>
 
 
     /Users/rohankotwani/anaconda/envs/datasci/lib/python3.5/site-packages/numpy/core/numeric.py:531: ComplexWarning: Casting complex values to real discards the imaginary part
@@ -617,7 +529,7 @@ plt.show()
 
 
 
-<p><img src='rossman_stores_example/output_62_2.png' /></p>
+<p><img src='/rossman_stores_example/output_62_2.png' /></p>
 
 
 
@@ -902,7 +814,7 @@ plt.show()
 
 
 
-<p><img src='rossman_stores_example/output_68_1.png' /></p>
+<p><img src='/rossman_stores_example/output_68_1.png' /></p>
 
 
 
