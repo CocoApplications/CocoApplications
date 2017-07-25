@@ -53,7 +53,7 @@ full.DayOfWeek = full.DayOfWeek.apply(int)
 full = full[full.Store<100]
 {% endhighlight %}
 
-
+### Add an Index by Date
 
 {% highlight python %}
 index_df = full[['Date']].groupby(['Date']).count().reset_index()
@@ -61,8 +61,6 @@ index_df['index'] = np.arange(0,len(index_df))
 full=full.merge(index_df, on='Date')
 full
 {% endhighlight %}
-
-
 
 
 <div>
@@ -472,7 +470,7 @@ full
 </div>
 
 
-
+### Create Non-Time-Series Predictor Variables (Store, Promo)
 
 {% highlight python %}
 groupby_value = full[['Value','index']].groupby(['index']).sum().reset_index()
@@ -499,12 +497,14 @@ plt.show()
 
 {% endhighlight %}
 
+### Multiple Predictors by Open (Only Include Predictors if Open)
 
 {% highlight python %}
 O_train=O_train*train.Open.values.reshape((len(train),1))
 O_valid=O_valid*valid.Open.values.reshape((len(valid),1))
 {% endhighlight %}
 
+### Find Seasonal with Signal Processing
 
 {% highlight python %}
 
@@ -536,8 +536,6 @@ plt.show()
 {% highlight python %}
 train.head(1)
 {% endhighlight %}
-
-
 
 
 <div>
@@ -609,7 +607,7 @@ print(t_i,t_f)
 
     34747.7512751 78100.2693837
 
-
+### Grid Search of Trend, Seasonality, and Other Predictors with LASSO Regression
 
 {% highlight python %}
 importlib.reload(Regression)
@@ -646,18 +644,6 @@ for i in range(1,2):
             x = DSP.generate_impluse_waves(valid['index'],period)
             S_valid=np.column_stack((S_valid,x))
             
-
-#             x = DSP.generate_sawtooth_waves(train['index'],period)
-#             S_train=np.column_stack((S_train,x))
-
-#             x = DSP.generate_sawtooth_waves(valid['index'],period)
-#             S_valid=np.column_stack((S_valid,x))
-            
-#             x = DSP.generate_sin_waves(train['index'],period)
-#             S_train=np.column_stack((S_train,x))
-
-#             x = DSP.generate_sin_waves(valid['index'],period)
-#             S_valid=np.column_stack((S_valid,x))
             
         S_train,S_valid = S_train[:,1:],S_valid[:,1:]
 
@@ -724,7 +710,7 @@ len(train)
     81390
 
 
-
+### Validation Dataset Results
 
 {% highlight python %}
 SSE,i,thresh,penalty = Regression.heapsort(heap)[0]
