@@ -1,0 +1,162 @@
+  import matplotlib.pyplot as plt
+import datetime
+import numpy as np
+import pandas as pd
+import Regression
+import DSP
+import importlib
+
+store = pd.read_csv('Rossman/store.csv')
+
+dateparse = lambda x: pd.datetime.strptime(x, '%Y-%m-%d')
+
+full = pd.read_csv('Rossman/train.csv',parse_dates=['Date'], date_parser=dateparse,dtype=str)
+
+full = full.rename(columns={"Sales":"Value"})
+
+full = full.sort_values(by=['Store','Date'])
+
+full = full.drop(['SchoolHoliday','Customers'],axis=1)
+
+full.Value = full.Value.apply(int)
+full.Store = full.Store.apply(int)
+full.Promo = full.Promo.apply(int)
+full.Open = full.Open.apply(int)
+full.DayOfWeek = full.DayOfWeek.apply(int)
+
+# Subset to first 100 stores
+full = full[full.Store<100]
+
+index_df = full[['Date']].groupby(['Date']).count().reset_index()
+index_df['index'] = np.arange(0,len(index_df))
+full=full.merge(index_df, on='Date')
+
+groupby_value = full[['Value','index']].groupby(['index']).sum().reset_index()
+dummies = pd.get_dummies(full.Store, prefix='Store').iloc[:, 1:]
+full = pd.concat([full, dummies], axis=1)
+
+train=full[full['index']<850].copy()
+valid=full[full['index']>=850].copy()
+
+O_train,O_valid = train[[x for x in train.columns if'Store_' in x or 'Promo' in x ]].values, valid[[x for x in valid.columns if'Store_' in x or 'Promo' in x ]].values
+
+O_train=O_train*train.Open.values.reshape((len(train),1))
+O_valid=O_valid*valid.Open.values.reshape((len(valid),1))
+
+time_diff_signal = DSP.time_diff_variable(groupby_value[['Value']].values.flatten(),1)
+plt.plot(groupby_value['index'][1:],time_diff_signal,'-');plt.xlabel('index');plt.ylabel('Value[t] - Value[t-1]');plt.title('Value[t] - Value[t-1]')
+plt.show()
+N = len(time_diff_signal)
+unfiltered  = DSP.get_frequency_domain(time_diff_signal)
+f,y  = unfiltered[:,0],unfiltered[:,1]
+y_abs=( 2.0/N * np.abs(y[1:]))
+
+t_i = np.mean(y_abs) + 1*np.std(y_abs)
+t_f = np.mean(y_abs) + 3*np.std(y_abs)
+
+heap = []
+for i in range(1,2):
+    T_train = Regression.pandas_poly_feature(train[['index']],i).values
+    T_valid = Regression.pandas_poly_feature(valid[['index']],i).values
+
+    skip_list=None
+    
+    for thresh in np.linspace(t_i,t_f,5):
+        abs_filtered = np.absolute(DSP.filter_freq_domain(unfiltered, center=0.25,band=0.24999999,threshold=thresh))
+
+        period_list = set([round(1/(ft)) for ft,ht in abs_filtered if round(1/(ft))>2])
+        print(period_list)
+
+        
+        if skip_list==period_list:
+            print("same sequences")
+            continue
+        skip_list = period_list
+        
+        
+        S_train = np.ones((len(train),1))
+        S_valid = np.ones((len(valid),1))
+        for period in period_list:
+
+
+            x = DSP.generate_impluse_waves(train['index'],period)
+            S_train=np.column_stack((S_train,x))
+            
+            x = DSP.generate_impluse_waves(valid['index'],period)
+            S_valid=np.column_stack((S_valid,x))
+        
+            
+        S_train,S_valid = S_train[:,1:],S_valid[:,1:]
+
+        
+        
+        P_train_df = pd.DataFrame(np.column_stack((S_train,T_train,O_train)))
+        P_valid_df = pd.DataFrame(np.column_stack((S_valid,T_valid,O_valid)))
+        
+        print("lasso")
+        lasso_heap=[]
+        for l1_penalty in np.linspace(0.01, 1, 2):
+            z = Regression.sklearn_lasso_regression(P_train_df,train[['Value']],l1_penalty)
+            SSE = Regression.numpy_SSE(P_valid_df,valid[['Value']],z)
+            lasso_heap.append((SSE,l1_penalty))
+        penalty = Regression.heapsort(lasso_heap)[0][1]
+        mask = Regression.sklearn_lasso_feature_selection(P_train_df,train[['Value']],penalty)
+        print(P_train_df[mask].head(n=1))
+        
+        z = Regression.numpy_simple_regression(P_train_df[mask].values,train[['Value']])
+        SSE = Regression.numpy_SSE(P_valid_df[mask].values,valid[['Value']],z)
+        heap.append((SSE,i,thresh,penalty))
+        print("SST: ",np.sum((valid['Value']-np.mean(valid['Value']))**2))
+        print("SSE: ",SSE)
+
+SSE,i,thresh,penalty = Regression.heapsort(heap)[0]
+print("model paramters: ",SSE,i,thresh,penalty)
+print("SST: ",np.sum((valid['Value']-np.mean(valid['Value']))**2))
+
+T_train = Regression.pandas_poly_feature(train[['index']],i).values
+T_valid = Regression.pandas_poly_feature(valid[['index']],i).values
+abs_filtered = np.absolute(DSP.filter_freq_domain(unfiltered, center=0.25,band=0.24999,threshold=thresh))
+
+period_list = set([round(1/(ft)) for ft,ht in abs_filtered if round(1/(ft))>2 ])
+
+S_train = np.ones((len(train),1))
+S_valid = np.ones((len(valid),1))
+for period in period_list:
+
+
+    x = DSP.generate_impluse_waves(train['index'],period)
+    S_train=np.column_stack((S_train,x))
+
+    x = DSP.generate_impluse_waves(valid['index'],period)
+    S_valid=np.column_stack((S_valid,x))
+    
+
+    
+S_train,S_valid = S_train[:,1:],S_valid[:,1:]
+P_train_df = pd.DataFrame(np.column_stack((S_train,T_train,O_train)))
+P_valid_df = pd.DataFrame(np.column_stack((S_valid,T_valid,O_valid)))      
+
+if penalty == 0:
+    mask = P_train_df.columns
+else:
+    mask = Regression.sklearn_lasso_feature_selection(P_train_df,train[['Value']],penalty)
+print(mask)
+print(P_train_df[mask].head())
+z = Regression.numpy_simple_regression(P_train_df[mask].values,train[['Value']])
+
+SSE = Regression.numpy_SSE(P_valid_df[mask].values,valid[['Value']],z)
+SST = np.sum((valid['Value']-np.mean(valid['Value']))**2)
+print("R-squared: ",1-SSE/SST)
+
+
+
+
+fig = plt.figure(figsize=(10,12))
+fig.suptitle("Rossman Store Sales", fontsize=16)
+ax = plt.subplot(2,1,1)
+predict = Regression.numpy_predict(P_valid_df[mask].values,z)
+ax.plot(valid['index'],valid['Value'],'b.');plt.plot(valid['index'],predict,'r.',linewidth=1.5);ax.set_title("Sales: valid")
+ax = plt.subplot(2,1,2)
+predict = Regression.numpy_predict(P_train_df[mask].values,z)
+ax.plot(train['index'],train['Value'],'b.');plt.plot(train['index'],predict,'r.',linewidth=1.5);ax.set_title("Sales: train")
+plt.show()
