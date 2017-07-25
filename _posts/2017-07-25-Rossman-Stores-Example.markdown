@@ -10,6 +10,8 @@ tags:
 
 ---
 
+### Upload Libraries and Data
+
 {% highlight python %}
 import matplotlib.pyplot as plt
 import datetime
@@ -25,16 +27,18 @@ dateparse = lambda x: pd.datetime.strptime(x, '%Y-%m-%d')
 
 full = pd.read_csv('Rossman/train.csv',parse_dates=['Date'], date_parser=dateparse,dtype=str)
 
+{% endhighlight %}
+
+### Preprocessing
+
+{% highlight python %}
+
 full = full.rename(columns={"Sales":"Value"})
 
 full = full.sort_values(by=['Store','Date'])
 
 full = full.drop(['SchoolHoliday','Customers'],axis=1)
 
-{% endhighlight %}
-
-
-{% highlight python %}
 full.Value = full.Value.apply(int)
 full.Store = full.Store.apply(int)
 full.Promo = full.Promo.apply(int)
@@ -42,6 +46,8 @@ full.Open = full.Open.apply(int)
 full.DayOfWeek = full.DayOfWeek.apply(int)
 {% endhighlight %}
 
+
+### Only select first 100 Stores due to limited resources
 
 {% highlight python %}
 full = full[full.Store<100]
