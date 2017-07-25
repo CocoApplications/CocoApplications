@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Kaggle Competition: Rossman Stores"
+title:  "Kaggle Competition: Rossman Stores Sales"
 date: 2017-07-06 12:00:00
 author: Rohan Kotwani
 excerpt: "Custom time-series technique applied to Rossman Stores Sales dataset"
