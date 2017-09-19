@@ -1,11 +1,11 @@
 # Site settings
-title: Data Science Engine
-longtitle: Data Science Engine (blog by Rohan Kotwani)
+title: Coco Applications
+longtitle: Coco Applications by Rohan Kotwani
 email: rohankotwani@icloud.com
-description: Data Science Engine — A showcase of algorithms written from scratch
+description: Coco — iOS and OS X productivity and automated apps
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://freedomtowin.github.io" # the base hostname & protocol for your site
+url: "http://CocoApplications.github.io" # the base hostname & protocol for your site
 #twitter_username: jekyllrb
-github_username: freedomtowin
+github_username: CocoApplications
 # Build settings
 markdown: kramdown
