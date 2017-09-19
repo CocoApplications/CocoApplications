@@ -12,11 +12,13 @@
 
 .site-title {
     font-size: 26px;
-    line-height: 27px;
-    line-width: 0px;
+    line-height: 56px;
+    
     letter-spacing: -1px;
     margin-bottom: 0;
-    float: left;
+
+    top:20px;
+    right:20px;
 
     &,
     &:visited {
