@@ -37,7 +37,6 @@
     .page-link {
         color: $text-color;
         line-height: $base-line-height;
-        font-size: 27px;
 
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
@@ -202,17 +201,25 @@
 }
 
 .post-title {
-    font-size: 42px;
+    font-size: 50px;
     letter-spacing: -1px;
     line-height: 1;
 
     @include media-query($on-laptop) {
-        font-size: 36px;
+        font-size: 44px;
     }
 }
 
 .post-content {
     margin-bottom: $spacing-unit;
+
+    h1 {
+        font-size: 38px;
+
+        @include media-query($on-laptop) {
+            font-size: 34px;
+        }
+    }
 
     h2 {
         font-size: 34px;
