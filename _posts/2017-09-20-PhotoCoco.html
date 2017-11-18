@@ -28,23 +28,6 @@ tags:
     PhotoCoco, iOS app, automatically takes pictures soon after starting the application without having to press the capture button. This app is perfect for when pictures need to be taken quickly or when there are movements from frame-to-frame. Pressing the awkwardly place capture button in the standard camera app can often cause a blurry or out of focus picture to be taken. By automatically taking pictures, the user can focus on zooming and pointing the camera in the right direction.
     </p>
     
-    
-    <div>
-    <img src="/images/PhotoCoco.png" alt="Doh!" height="480px" width="360px" vpace="10px" align="center">
-    <p> Figure 1. </p>
-    </div>
-    
-    
-    <h3>
-        How it Works
-    </h3>
-    <p>
-    PhotoCoco works by dividing each frame into 48 tiles, as seen in Figure 1., and then comparing each tile in the current frame to the previous frame. An algorithm then takes these comparisons and generates a measure of whether a change has been detected which is used to decide whether to take a picture. The information on which tile experienced the most change is also used to auto-focus the camera intermittently.
-    </p>
-    <p>
-    The user interface is simple with only a few buttons. There is a frame-to-frame sensitivity slider that adjust how sensitive PhotoCoco is to changes between frames. To indicate that a photo has been taken, a white bordered is displayed around the video feed. Finally, there are two buttons to start or pause the application.
-    </p>
-    
     <h3>
         How is it Useful?
     </h3>
